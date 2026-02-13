@@ -1,0 +1,6 @@
+# Build artifacts
+DownloadApps.app/
+
+# macOS
+.DS_Store
+*.swp
