@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non App Store Apps Download — macOS Automator App</title>
+  <meta name="description" content="A simple macOS Automator app that downloads popular apps directly from official vendor sources. No App Store required. Easy to customize with your own apps.">
+  <meta name="keywords" content="macOS, Automator, download, apps, Apple Silicon, non app store, Chrome, VS Code, Brave, ChatGPT">
+  <meta name="author" content="CodeCraftedApps">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://nonappstoreapps.codecraftedapps.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Non App Store Apps Download — macOS Automator App">
+  <meta property="og:description" content="A simple macOS Automator app that downloads popular apps directly from official vendor sources. No App Store required.">
+  <meta property="og:url" content="https://nonappstoreapps.codecraftedapps.com/">
+  <meta property="og:site_name" content="Non App Store Apps Download">
+  <meta property="og:image" content="https://nonappstoreapps.codecraftedapps.com/favicon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Non App Store Apps Download — macOS Automator App">
+  <meta name="twitter:description" content="A simple macOS Automator app that downloads popular apps directly from official vendor sources.">
+  <meta name="twitter:image" content="https://nonappstoreapps.codecraftedapps.com/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Non App Store Apps Download",
+    "description": "A simple macOS Automator app that downloads popular apps directly from official vendor sources. No App Store required. Easy to customize.",
+    "url": "https://nonappstoreapps.codecraftedapps.com/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS 12.0+",
+    "license": "https://opensource.org/licenses/MIT",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "CodeCraftedApps",
+      "url": "https://codecraftedapps.com"
+    },
+    "softwareVersion": "1.0.0",
+    "programmingLanguage": "Bash",
+    "codeRepository": "https://github.com/DJCastle/nonappstoreappsdownload",
+    "downloadUrl": "https://github.com/DJCastle/nonappstoreappsdownload/archive/refs/heads/main.zip"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Non App Store<span>Apps</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.site-nav').classList.toggle('open')">&#9776;</button>
+      <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://github.com/DJCastle/nonappstoreappsdownload" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://codecraftedapps.com">CodeCraftedApps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Your apps. One click.<br><span>No App Store needed.</span></h1>
+        <p class="tagline">A macOS Automator app that downloads popular applications directly from official vendor servers. Open it, edit it, make it yours.</p>
+        <p class="sub-tagline">Open source. Fully customizable. Built for Apple Silicon.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">v1.0.0</span>
+          <span class="hero-badge">macOS 12.0+</span>
+          <span class="hero-badge">MIT License</span>
+          <span class="hero-badge">Apple Silicon</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://github.com/DJCastle/nonappstoreappsdownload/archive/refs/heads/main.zip" class="btn-primary">Download (.zip)</a>
+          <a href="https://github.com/DJCastle/nonappstoreappsdownload" class="btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="disclaimer">
+          <div class="disclaimer-icon">&#9888;&#65039;</div>
+          <div class="disclaimer-content">
+            <h3>Third-Party Software Disclaimer</h3>
+            <p>This tool downloads applications directly from official vendor servers. It is not affiliated with, endorsed by, or sponsored by any of the software vendors. All trademarks belong to their respective owners. You are responsible for reviewing license agreements of any software you download. See the full <a href="https://github.com/DJCastle/nonappstoreappsdownload/blob/main/DISCLAIMER.md" target="_blank" rel="noopener">disclaimer</a> for details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How to Use</h2>
+        <p class="section-subtitle">Three commands. That's it.</p>
+        <div class="instructions-grid">
+
+          <div class="instruction-card">
+            <div class="instruction-number">Option A</div>
+            <h3>Automator App (Recommended)</h3>
+            <p>Build the app, double-click to run. Right-click to edit in Automator.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/nonappstoreappsdownload.git</span><br>
+              <span class="command">cd nonappstoreappsdownload</span><br><br>
+              <span class="comment"># Build the Automator app</span><br>
+              <span class="command">./build-automator-app.sh</span><br><br>
+              <span class="comment"># Run it</span><br>
+              <span class="command">open "Download Apps.app"</span>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Option B</div>
+            <h3>Shell Script</h3>
+            <p>Prefer the terminal? Run the script directly.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/nonappstoreappsdownload.git</span><br>
+              <span class="command">cd nonappstoreappsdownload</span><br><br>
+              <span class="comment"># Run the download script</span><br>
+              <span class="command">./download-apps.sh</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Default Apps -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Default Apps</h2>
+        <p class="section-subtitle">Included out of the box. All downloaded from official vendor servers.</p>
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Application</th>
+                <th>Source</th>
+                <th>Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="app-name">Bambu Studio</td>
+                <td>GitHub Releases (latest)</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">Brave Browser</td>
+                <td>brave.com</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">Google Chrome</td>
+                <td>google.com</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">ChatGPT Desktop</td>
+                <td>openai.com</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">Grammarly Desktop</td>
+                <td>grammarly.com</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">Visual Studio Code</td>
+                <td>code.visualstudio.com</td>
+                <td><span class="app-format">.zip</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customize -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Make It Yours</h2>
+        <p class="section-subtitle">The whole point is to add your own apps. Here's how.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#9881;&#65039;</div>
+            <h3>Edit in Automator</h3>
+            <p>Right-click <strong>Download Apps.app</strong>, choose Open With &rarr; Automator. You'll see the shell script with all the URLs. Add or remove lines and save.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128221;</div>
+            <h3>Edit the Build Script</h3>
+            <p>Open <code>build-automator-app.sh</code> in any text editor. Find the APP LIST section, add your download lines, and rebuild with <code>./build-automator-app.sh</code>.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128187;</div>
+            <h3>Edit the Shell Script</h3>
+            <p>Edit <code>download-apps.sh</code> directly. Add a new line following the format: <code>download "Name" "URL" "file.dmg"</code>. Run it from Terminal.</p>
+          </div>
+
+        </div>
+
+        <div class="customize-callout" style="margin-top: 28px;">
+          <p>Each download is a single line:</p>
+          <p><code>download "App Name" "https://example.com/app.dmg" "FileName.dmg"</code></p>
+          <p>Find the direct download URL from the app's official website, add the line, and you're done.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Simple by design.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#11015;&#65039;</div>
+            <h3>Direct Downloads</h3>
+            <p>Every app is downloaded directly from the official vendor's servers. No middlemen, no mirrors, no package managers.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128194;</div>
+            <h3>Saved to Desktop</h3>
+            <p>All files land on your Desktop. Open .dmg files to install, or unzip .zip files to get the .app.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128274;</div>
+            <h3>Gatekeeper Verified</h3>
+            <p>macOS Gatekeeper automatically verifies the code signature of every downloaded app before it runs.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128736;&#65039;</div>
+            <h3>Built on Automator</h3>
+            <p>Uses Apple's built-in Automator. No dependencies, no compiling, no Xcode. Just a shell script in an Automator wrapper.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128172;</div>
+            <h3>Completion Dialog</h3>
+            <p>Shows a macOS dialog when all downloads finish with the option to open your Desktop and see the files.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#127744;</div>
+            <h3>Open Source</h3>
+            <p>MIT licensed. Read every line. Fork it, customize it, share it. The code is yours.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Requirements</h2>
+        <p class="section-subtitle">What you need to run this tool.</p>
+        <div class="requirements-list">
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>macOS 12.0 (Monterey) or later</strong> &mdash; Apple Silicon (M1/M2/M3/M4)</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Internet connection</strong> &mdash; to download from vendor servers</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Terminal access</strong> &mdash; only for building the Automator app (one command)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p>Non App Store Apps Download is part of <a href="https://codecraftedapps.com">CodeCraftedApps</a>, an independent developer's collection of apps, tools, and open-source projects. Built to solve a simple problem: getting your essential apps onto a new Mac quickly.</p>
+          <p>No account needed. No package manager required. Just the apps you want, downloaded from where they come from. Fork it and make it your own.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-copyright">&copy; 2026 CodeCraftedApps. All rights reserved.</p>
+        <nav class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://github.com/DJCastle/nonappstoreappsdownload" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://codecraftedapps.com">CodeCraftedApps</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

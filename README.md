@@ -1,21 +1,22 @@
 # Non App Store Apps Download
 
-> A lightweight macOS utility that downloads popular apps directly from official vendor sources — no App Store required.
+> A simple macOS Automator app that downloads popular applications directly from official vendor sources — no App Store required. Easy to customize with your own apps.
 
-[![macOS](https://img.shields.io/badge/macOS-13.0%2B-blue)](https://www.apple.com/macos/)
+[![macOS](https://img.shields.io/badge/macOS-12.0%2B-blue)](https://www.apple.com/macos/)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-native-green)](https://support.apple.com/en-us/116943)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Website](https://img.shields.io/badge/Website-nonappstoreapps.codecraftedapps.com-10b981)](https://nonappstoreapps.codecraftedapps.com)
 
 ---
 
 ## What It Does
 
-Downloads macOS applications that aren't available on the App Store — directly from the official vendor servers. No package manager needed, no account required.
+Downloads macOS applications that aren't on the App Store — directly from the official vendor servers. No package manager needed, no account required. Files are saved to your **Desktop**.
 
-**Included Apps:**
+**Default Apps:**
 
 | App | Source | Format |
-|-----|--------|--------|
+| --- | ------ | ------ |
 | Bambu Studio | GitHub Releases (latest) | `.dmg` |
 | Brave Browser | brave.com | `.dmg` |
 | Google Chrome | google.com | `.dmg` |
@@ -29,20 +30,20 @@ All downloads target **Apple Silicon (ARM64)** natively.
 
 ## Quick Start
 
-### Option 1: Native macOS App (Recommended)
+### Automator App (Recommended)
 
-Build and launch the SwiftUI app — gives you a full GUI with per-download progress bars, speeds, and ETAs.
+Build the app, double-click to run. Shows a dialog when downloads finish.
 
 ```bash
 git clone https://github.com/DJCastle/nonappstoreappsdownload.git
 cd nonappstoreappsdownload
-./build.sh
-open DownloadApps.app
+./build-automator-app.sh
+open "Download Apps.app"
 ```
 
-### Option 2: Shell Script
+### Shell Script
 
-Run the shell script for a simple terminal-based download.
+If you prefer the terminal:
 
 ```bash
 git clone https://github.com/DJCastle/nonappstoreappsdownload.git
@@ -52,53 +53,32 @@ cd nonappstoreappsdownload
 
 ---
 
-## The App
-
-The native macOS app provides a real-time download dashboard:
-
-- **Per-download progress bars** with live file sizes
-- **Download speed** display (MB/s)
-- **Estimated time remaining** for each download
-- **Parallel downloads** — up to 5 simultaneous (batched automatically)
-- **Status indicators** — Queued, Downloading, Complete, Failed
-- **Overall progress** bar across all downloads
-- **Open Desktop** button when finished
-
----
-
-## Building from Source
-
-Requires **Xcode Command Line Tools** (macOS 13.0+):
-
-```bash
-xcode-select --install   # if not already installed
-./build.sh               # compiles DownloadApps.app
-```
-
-Or compile manually:
-
-```bash
-swiftc -framework SwiftUI -framework AppKit -O \
-  -o DownloadApps.app/Contents/MacOS/DownloadApps \
-  DownloadApps.swift
-```
-
----
-
 ## Customizing the App List
 
-Edit the `appDefinitions` array in `DownloadApps.swift`:
+The whole point of this tool is to make it yours. Add or remove apps using any of these methods:
 
-```swift
-let appDefinitions: [AppInfo] = [
-    AppInfo(name: "Your App", fileName: "YourApp.dmg", urlString: "https://example.com/app.dmg"),
-    // ...
-]
-```
+### Edit in Automator
 
-Then rebuild with `./build.sh`.
+1. Right-click **Download Apps.app** → **Open With** → **Automator**
+2. You'll see the shell script with all the download URLs
+3. Add or remove `download` lines:
 
-For the shell script, edit `download-apps.sh` directly.
+   ```bash
+   download "App Name" "https://example.com/direct-download-link.dmg" "FileName.dmg"
+   ```
+
+4. Save (Cmd+S) and close Automator
+
+### Edit the Build Script
+
+1. Open `build-automator-app.sh` in any text editor
+2. Find the `APP LIST` section
+3. Add or remove `download` lines
+4. Run `./build-automator-app.sh` to rebuild
+
+### Edit the Shell Script
+
+Edit `download-apps.sh` directly and run it from Terminal.
 
 ---
 
@@ -113,9 +93,8 @@ For the shell script, edit `download-apps.sh` directly.
 
 ## Requirements
 
-- macOS 13.0 or later
-- Apple Silicon (M1/M2/M3/M4)
-- Xcode Command Line Tools (for building from source)
+- macOS 12.0 (Monterey) or later
+- Apple Silicon (M1/M2/M3/M4) — download URLs target ARM64
 - Internet connection
 
 ---
@@ -129,10 +108,27 @@ For the shell script, edit `download-apps.sh` directly.
 
 ---
 
+## Project Structure
+
+```
+├── build-automator-app.sh   # Builds the Automator .app
+├── download-apps.sh          # Standalone shell script alternative
+├── docs/                     # Website (GitHub Pages)
+├── DISCLAIMER.md             # Third-party software disclaimer
+├── LICENSE                   # MIT License
+└── README.md                 # This file
+```
+
+---
+
 ## License
 
 [MIT License](LICENSE) — free to use, modify, and distribute.
 
 ---
 
-Built by [CodeCraftedApps](https://github.com/DJCastle)
+## Links
+
+- **Website:** [nonappstoreapps.codecraftedapps.com](https://nonappstoreapps.codecraftedapps.com)
+- **GitHub:** [github.com/DJCastle/nonappstoreappsdownload](https://github.com/DJCastle/nonappstoreappsdownload)
+- **CodeCraftedApps:** [codecraftedapps.com](https://codecraftedapps.com)

@@ -31,3 +31,7 @@ By using this tool, you acknowledge that:
 ## Code Signature Verification
 
 macOS Gatekeeper will verify the code signature of downloaded applications before allowing them to run. We recommend keeping Gatekeeper enabled and only running applications from identified developers.
+
+## Contact
+
+Questions or concerns? Open an issue on [GitHub](https://github.com/DJCastle/nonappstoreappsdownload/issues) or visit the [CodeCraftedApps Contact page](https://codecraftedapps.com/contact.html).
