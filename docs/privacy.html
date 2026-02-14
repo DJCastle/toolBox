@@ -75,18 +75,22 @@
           </ul>
 
           <h3>What Happens When You Run It</h3>
-          <p>When you run the Automator app or shell script, it downloads files from third-party vendor servers using <code>curl</code>. These download requests go directly to the vendor's servers (e.g., google.com, brave.com, github.com). We have no visibility into these requests.</p>
+          <p>When you run the AppleScript application or shell script, it makes requests to the <a href="https://formulae.brew.sh/" target="_blank" rel="noopener">Homebrew Cask API</a> to resolve download URLs, then downloads files from third-party vendor servers using <code>curl</code>. These requests go directly to the vendor's servers. We have no visibility into these requests.</p>
 
           <h2>Third-Party Services</h2>
-          <p>The tool downloads applications from third-party vendor servers. Each vendor has their own privacy policies:</p>
+          <p>The tool connects to the following services:</p>
           <ul>
-            <li><strong>GitHub:</strong> Used for Bambu Studio releases. Subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's Privacy Statement</a></li>
+            <li><strong>Homebrew Cask API:</strong> Used to resolve the latest stable release URL for each app. Subject to <a href="https://github.com/Homebrew/homebrew-cask/blob/master/LICENSE" target="_blank" rel="noopener">Homebrew's BSD License</a></li>
+          </ul>
+          <p>The default app list downloads from these vendors (each with their own privacy policies):</p>
+          <ul>
             <li><strong>Google:</strong> Used for Chrome downloads. Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a></li>
             <li><strong>Brave:</strong> Subject to <a href="https://brave.com/privacy/browser/" target="_blank" rel="noopener">Brave's Privacy Policy</a></li>
-            <li><strong>OpenAI:</strong> Used for ChatGPT downloads. Subject to <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI's Privacy Policy</a></li>
-            <li><strong>Grammarly:</strong> Subject to <a href="https://www.grammarly.com/privacy-policy" target="_blank" rel="noopener">Grammarly's Privacy Policy</a></li>
             <li><strong>Microsoft:</strong> Used for VS Code downloads. Subject to <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener">Microsoft's Privacy Statement</a></li>
+            <li><strong>Slack (Salesforce):</strong> Subject to <a href="https://slack.com/trust/privacy/privacy-policy" target="_blank" rel="noopener">Slack's Privacy Policy</a></li>
+            <li><strong>iTerm2:</strong> Open-source terminal. Subject to <a href="https://iterm2.com" target="_blank" rel="noopener">iTerm2's website</a></li>
           </ul>
+          <p>Users can add any app available in <a href="https://formulae.brew.sh/cask/" target="_blank" rel="noopener">Homebrew Cask</a>. Downloads go directly to each vendor's servers — we do not proxy, cache, or modify any downloads.</p>
 
           <h2>Website Data</h2>
 

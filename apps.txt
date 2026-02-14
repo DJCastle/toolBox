@@ -1,0 +1,101 @@
+# ============================================================
+#  NON APP STORE APPS DOWNLOAD — App List
+# ============================================================
+#
+#  ADDING APPS
+#  -----------
+#  The easiest way: click "Add App" when the app launches.
+#  Type any app name (e.g. "Firefox") and pick from results.
+#  Added apps are saved here automatically and persist
+#  between sessions — your list stays even after closing
+#  and reopening the app.
+#
+#  MANUAL EDITING
+#  --------------
+#  You can also edit this file directly.
+#  Format:   App Name | filename.dmg | Download URL
+#
+#  DOWNLOAD URL OPTIONS
+#  --------------------
+#  You can use three types of download sources:
+#
+#  1. BREW:cask-name  (Recommended — always gets the latest stable release)
+#     Uses the Homebrew Cask database to auto-resolve the latest
+#     stable release URL. No beta versions, no need to track version numbers.
+#     Find cask names at: https://formulae.brew.sh/cask/
+#     Example:  Firefox | Firefox.dmg | BREW:firefox
+#
+#  2. GITHUB:owner/repo
+#     Auto-resolves the latest GitHub release (.dmg asset).
+#     Example:  Rectangle | Rectangle.dmg | GITHUB:rxhanson/Rectangle
+#
+#  3. Direct URL (https://...)
+#     A specific download link. You are responsible for keeping
+#     this URL up to date when new versions are released.
+#     Example:  MyApp | MyApp.dmg | https://example.com/MyApp.dmg
+#
+#  NOTES
+#  -----
+#  - Lines starting with # are comments (ignored)
+#  - Blank lines are ignored
+#  - Files are saved to your Desktop
+#  - When using BREW:, the filename is auto-detected from the
+#    resolved URL, so the filename column is just a fallback
+#
+#  ICLOUD SYNC TIP
+#  ----------------
+#  Save "Download Apps.app" to your iCloud Drive
+#  (e.g. the Automator folder). Your app list syncs
+#  across all your Macs automatically. After a system
+#  reload, just open the app from iCloud — your full
+#  list is ready to go.
+#
+#  HOW TO FIND THIS FILE
+#  ---------------------
+#  Right-click "Download Apps.app" > Show Package Contents
+#  > Contents > Resources > apps.txt
+#  Or click "Edit App List" when the app launches.
+#
+#  USE WITH CARE
+#  -------------
+#  This tool ONLY DOWNLOADS files to your Desktop. It does
+#  not install, open, or run anything. You decide what to
+#  do with the downloaded files.
+#
+#  When adding apps, make sure you know what you're selecting.
+#  Search results may include similarly named apps — verify
+#  the app name and developer before adding it to your list.
+#  Only add software you recognize and trust.
+#
+#  SECURITY — USE OFFICIAL SOURCES ONLY
+#  -------------------------------------
+#  When editing this file manually, only use cask names from
+#  the official Homebrew catalog: https://formulae.brew.sh/cask/
+#  Do not enter arbitrary text or untrusted values.
+#
+#  BREW: and GITHUB: sources are safe — they resolve to official
+#  vendor URLs curated by the Homebrew community or pulled
+#  directly from GitHub releases.
+#
+#  If using a direct URL, always get it from the app vendor's
+#  official website. Never use third-party download sites,
+#  mirrors, or unofficial sources. Unofficial downloads may
+#  contain malware, adware, or tampered software.
+#
+#  How to find a safe direct download link:
+#    1. Go to the app's official website
+#    2. Find their download page
+#    3. Right-click the download button > Copy Link Address
+#    4. Paste that URL here
+#
+#  macOS Gatekeeper will verify code signatures before
+#  allowing downloaded apps to run, but using official
+#  sources is your first line of defense.
+#
+# ============================================================
+
+Google Chrome | GoogleChrome.dmg | BREW:google-chrome
+Brave Browser | BraveBrowser.dmg | BREW:brave-browser
+Visual Studio Code | VSCode.zip | BREW:visual-studio-code
+Slack | Slack.dmg | BREW:slack
+iTerm2 | iTerm2.zip | BREW:iterm2
