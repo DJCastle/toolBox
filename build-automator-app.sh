@@ -14,11 +14,24 @@ rm -rf "$APP_BUNDLE"
 mkdir -p "$APP_BUNDLE/Contents/MacOS"
 
 # Symlink to Automator Application Stub
-ln -s "/System/Library/Automator/Application Stub.app/Contents/MacOS/Application Stub" \
-    "$APP_BUNDLE/Contents/MacOS/Application Stub"
+# Location varies by macOS version — check both paths
+STUB_NEW="/System/Library/CoreServices/Automator Application Stub.app/Contents/MacOS/Automator Application Stub"
+STUB_OLD="/System/Library/Automator/Application Stub.app/Contents/MacOS/Application Stub"
 
-# Write Info.plist
-cat > "$APP_BUNDLE/Contents/Info.plist" << 'PLIST'
+if [ -f "$STUB_NEW" ]; then
+    ln -s "$STUB_NEW" "$APP_BUNDLE/Contents/MacOS/Automator Application Stub"
+    STUB_EXEC="Automator Application Stub"
+elif [ -f "$STUB_OLD" ]; then
+    ln -s "$STUB_OLD" "$APP_BUNDLE/Contents/MacOS/Application Stub"
+    STUB_EXEC="Application Stub"
+else
+    echo "Error: Could not find Automator Application Stub on this system."
+    echo "Make sure Automator is available on your Mac."
+    exit 1
+fi
+
+# Write Info.plist (uses detected stub executable name)
+cat > "$APP_BUNDLE/Contents/Info.plist" << PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -28,7 +41,7 @@ cat > "$APP_BUNDLE/Contents/Info.plist" << 'PLIST'
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>Application Stub</string>
+	<string>$STUB_EXEC</string>
 	<key>CFBundleIconFile</key>
 	<string>AutomatorApplet</string>
 	<key>CFBundleIdentifier</key>
