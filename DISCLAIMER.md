@@ -80,9 +80,11 @@ These permissions are managed by macOS and can be reviewed or revoked at any tim
 
 Apps you add through the built-in search are saved permanently to the `apps.txt` file inside the app bundle. Your list persists between sessions — close the app and reopen it, and your apps will still be there. Removing an app deletes it from `apps.txt` so it won't download on future runs.
 
-## iCloud Sync
+## iCloud Sync (Automatic)
 
-For the best experience, save **Download Apps.app** to your **iCloud Drive** (e.g. the Automator folder or any iCloud-synced folder). Because your app list is stored inside the app bundle, it syncs automatically across all your Macs via iCloud. After a system reload or on a new machine, simply open the app from iCloud — your full app list is ready to go.
+The build script automatically installs the app to your **iCloud Drive > Automator** folder (`~/Library/Mobile Documents/com~apple~Automator/Documents/`) if iCloud Drive is enabled. Because your app list is stored inside the app bundle, it syncs automatically across all your Macs via iCloud. After a system reload or on a new machine, simply open the app from iCloud — your full app list is ready to go.
+
+If iCloud Drive is not enabled, the app is built in the current directory and you can manually move it to any iCloud-synced folder.
 
 ## Code Signature Verification
 

@@ -42,13 +42,14 @@
 #  - When using BREW:, the filename is auto-detected from the
 #    resolved URL, so the filename column is just a fallback
 #
-#  ICLOUD SYNC TIP
-#  ----------------
-#  Save "Download Apps.app" to your iCloud Drive
-#  (e.g. the Automator folder). Your app list syncs
-#  across all your Macs automatically. After a system
-#  reload, just open the app from iCloud — your full
-#  list is ready to go.
+#  ICLOUD SYNC (AUTOMATIC)
+#  -----------------------
+#  The build script automatically installs the app to
+#  your iCloud Drive > Automator folder. Your app list
+#  syncs across all your Macs automatically. After a
+#  system reload, just open the app from iCloud — your
+#  full list is ready to go. If iCloud Drive is not
+#  enabled, move the app to any iCloud folder manually.
 #
 #  HOW TO FIND THIS FILE
 #  ---------------------

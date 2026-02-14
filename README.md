@@ -59,7 +59,7 @@ This is a native macOS application built with [AppleScript](https://developer.ap
 - **osacompile** — Apple's compiler that builds AppleScript into native macOS applications ([Apple Developer](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptX/Concepts/osa.html))
 - **macOS Automation** — Part of Apple's automation framework alongside [Automator](https://support.apple.com/guide/automator/welcome/mac) and Shortcuts
 
-Save the built `.app` to your **iCloud Drive > Automator** folder to keep it alongside your other macOS automation tools and sync it across all your Macs.
+The build script automatically installs the app to your **iCloud Drive > Automator** folder (if iCloud Drive is enabled), keeping it alongside your other macOS automation tools and syncing it across all your Macs.
 
 ---
 
@@ -71,8 +71,9 @@ Save the built `.app` to your **iCloud Drive > Automator** folder to keep it alo
 git clone https://github.com/DJCastle/nonappstoreappsdownload.git
 cd nonappstoreappsdownload
 ./build-automator-app.sh
-open "Download Apps.app"
 ```
+
+The build script compiles the app and **automatically copies it to your iCloud Drive > Automator folder** (if iCloud Drive is enabled). This means the app syncs across all your Macs and is ready to use after a system reload — no manual setup needed. If iCloud Drive is not available, the app is built in the current directory and you can move it wherever you like.
 
 ### Shell Script (Alternative)
 
@@ -142,9 +143,11 @@ Browse available cask names at [formulae.brew.sh/cask](https://formulae.brew.sh/
 
 Apps you add through the built-in search are **saved permanently**. Close the app and reopen it — your list is still there. Removed apps are deleted from the list and won't download on future runs.
 
-### Save to iCloud for Cross-Machine Sync
+### iCloud Sync (Automatic)
 
-For the best experience across system reloads and multiple Macs, save **Download Apps.app** to your **iCloud Drive** (e.g. the **Automator** folder or any iCloud folder). Your customized app list is stored inside the app bundle, so it syncs automatically via iCloud. After a fresh macOS install or on a new Mac, just open the app from iCloud and download everything in one click — no setup needed.
+The build script automatically installs the app to your **iCloud Drive > Automator** folder (`~/Library/Mobile Documents/com~apple~Automator/Documents/`). Your customized app list is stored inside the app bundle, so it syncs automatically via iCloud across all your Macs. After a fresh macOS install or on a new Mac, just open the app from iCloud and download everything in one click — no setup needed.
+
+If iCloud Drive is not enabled, the build script will let you know and you can manually move the app to any iCloud-synced folder.
 
 ### System Permissions
 
@@ -184,7 +187,7 @@ See [DISCLAIMER.md](DISCLAIMER.md) for the full disclaimer.
 ```text
 ├── DownloadApps.applescript   # Main app source (AppleScript — Apple's macOS scripting language)
 ├── apps.txt                    # Editable app list (bundled into .app)
-├── build-automator-app.sh      # Build script (uses Apple's osacompile)
+├── build-automator-app.sh      # Build script (uses Apple's osacompile, auto-installs to iCloud)
 ├── download-apps.sh            # Standalone shell script alternative
 ├── docs/                       # Website (GitHub Pages)
 ├── DISCLAIMER.md               # Third-party software disclaimer

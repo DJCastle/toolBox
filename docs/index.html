@@ -150,16 +150,15 @@
           <div class="instruction-card">
             <div class="instruction-number">Option A</div>
             <h3>macOS App (Recommended)</h3>
-            <p>Build the native app, double-click to run. Manage your app list from the built-in UI.</p>
+            <p>Build the native app and it's automatically installed to your iCloud Automator folder. Manage your app list from the built-in UI.</p>
             <div class="code-block">
               <span class="comment"># Clone the repository</span><br>
               <span class="command">git clone https://github.com/DJCastle/nonappstoreappsdownload.git</span><br>
               <span class="command">cd nonappstoreappsdownload</span><br><br>
-              <span class="comment"># Build the app</span><br>
-              <span class="command">./build-automator-app.sh</span><br><br>
-              <span class="comment"># Run it</span><br>
-              <span class="command">open "Download Apps.app"</span>
+              <span class="comment"># Build &amp; auto-install to iCloud Automator folder</span><br>
+              <span class="command">./build-automator-app.sh</span>
             </div>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">The app is automatically copied to <strong>iCloud Drive &gt; Automator</strong> for cross-machine sync. If iCloud is not available, the app is built in the current directory.</p>
           </div>
 
           <div class="instruction-card">
@@ -331,7 +330,7 @@
           <div class="feature-card">
             <div class="feature-icon">&#128736;&#65039;</div>
             <h3>macOS Automation</h3>
-            <p>Part of Apple's automation ecosystem alongside <a href="https://support.apple.com/guide/automator/welcome/mac" target="_blank" rel="noopener">Automator</a> and Shortcuts. Save it to your iCloud Automator folder to keep it with your other automation tools and sync across Macs.</p>
+            <p>Part of Apple's automation ecosystem alongside <a href="https://support.apple.com/guide/automator/welcome/mac" target="_blank" rel="noopener">Automator</a> and Shortcuts. The build script automatically installs to your iCloud Automator folder, keeping it with your other automation tools and syncing across Macs.</p>
           </div>
 
         </div>
@@ -389,8 +388,8 @@
         <div class="disclaimer" style="border-color: var(--accent);">
           <div class="disclaimer-icon">&#9729;&#65039;</div>
           <div class="disclaimer-content">
-            <h3>Pro Tip: Save to iCloud</h3>
-            <p>Save <strong>Download Apps.app</strong> to your <strong>iCloud Drive &gt; Automator</strong> folder (or any iCloud folder). Your customized app list syncs across all your Macs and survives system reloads &mdash; just open it from iCloud on your freshly installed system and download everything in one click.</p>
+            <h3>Automatic iCloud Sync</h3>
+            <p>The build script automatically installs the app to your <strong>iCloud Drive &gt; Automator</strong> folder. Your customized app list syncs across all your Macs and survives system reloads &mdash; just open it from iCloud on your freshly installed system and download everything in one click. If iCloud Drive is not enabled, the app is built locally and you can move it to any iCloud folder manually.</p>
           </div>
         </div>
       </div>

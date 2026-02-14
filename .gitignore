@@ -5,3 +5,22 @@ DownloadApps.app/
 # macOS
 .DS_Store
 *.swp
+.AppleDouble
+__MACOSX/
+
+# Secrets and credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+credentials*
+secrets*
+id_rsa*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.code-workspace
