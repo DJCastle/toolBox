@@ -1,6 +1,6 @@
 # Non App Store Apps Download
 
-> A native macOS AppleScript application that downloads apps directly from official vendor sources — no App Store required. Built with [Apple's macOS automation technologies](https://support.apple.com/guide/automator/welcome/mac), it searches for apps by name, manages your list, and downloads the latest stable releases in one click. Designed to simplify system reloads and keep local installer copies up to date.
+> Many essential Mac apps — like Chrome, VS Code, and Slack — aren't available in the Apple App Store. Every time you reinstall macOS, you visit a dozen vendor websites to download them all over again. This native macOS AppleScript application does it for you: search by name, build your list, and batch download the latest stable releases from official sources in one click. Built with [Apple's macOS automation technologies](https://support.apple.com/guide/automator/welcome/mac).
 
 [![macOS](https://img.shields.io/badge/macOS-13.0%2B-blue)](https://www.apple.com/macos/)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-native-green)](https://support.apple.com/en-us/116943)
@@ -12,9 +12,11 @@
 
 ## Important — Use With Care
 
-This tool **only downloads** applications to your Desktop. It does **not install, open, or run** anything. You are in full control of what happens after the download.
+This tool is for apps that are **not available in the Apple App Store**. If an app is in the App Store, use the App Store — it's the safest and easiest way to install software on your Mac.
 
-That said, please use this responsibly:
+This tool **only downloads** installer files to your Desktop for apps you'd otherwise have to get from vendor websites. It does **not install, open, or run** anything. You are in full control of what happens after the download.
+
+Please use this responsibly:
 
 - **Know what you're adding.** When searching for apps, make sure you select the correct one. Verify the app name and developer before adding it to your list.
 - **Only download software you trust.** Don't add apps you're unfamiliar with. If you're unsure about an app, research it first.
@@ -27,7 +29,7 @@ See [DISCLAIMER.md](DISCLAIMER.md) for full details.
 
 ## What It Does
 
-Downloads macOS applications that aren't on the App Store — directly from official vendor servers. Great for:
+Many popular macOS applications — like Chrome, VS Code, Slack, and iTerm2 — are not available in the Apple App Store. You have to download them directly from each vendor's website. This tool automates that process. Great for:
 
 - **System reloads** — get all your essential apps back quickly after a fresh macOS install
 - **Keeping local copies** — maintain up-to-date installer files for offline use or multiple machines

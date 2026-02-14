@@ -4,9 +4,13 @@
 
 **Non App Store Apps Download** is a native macOS application built with [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html) and compiled using Apple's `osacompile` tool. It is part of Apple's [macOS automation ecosystem](https://support.apple.com/guide/automator/welcome/mac) and runs as a standard `.app` bundle — no third-party frameworks or runtimes required.
 
+## For Apps Not in the App Store
+
+This tool is designed for applications that are **not available in the Apple App Store** — apps like Chrome, VS Code, Slack, and iTerm2 that require downloading directly from vendor websites. If an app is available in the App Store, use the App Store. It is the safest and easiest way to install software on your Mac.
+
 ## Download Only
 
-This is a download utility. It downloads application installer files to your Desktop. It does **not install, open, modify, or execute** any software. What you do with the downloaded files is entirely your responsibility.
+This is a download utility. It downloads installer files to your Desktop for apps you'd otherwise have to get from vendor websites. It does **not install, open, modify, or execute** any software. What you do with the downloaded files is entirely your responsibility.
 
 ## Use With Care
 
