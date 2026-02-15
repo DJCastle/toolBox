@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nonappstoreapps.codecraftedapps.com/sitemap.xml
