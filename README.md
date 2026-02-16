@@ -1,12 +1,14 @@
 # Non App Store Apps Download
 
-> Many essential Mac apps — like Chrome, VS Code, and Slack — aren't available in the Apple App Store. Every time you reinstall macOS, you visit a dozen vendor websites to download them all over again. This native macOS AppleScript application does it for you: search by name, build your list, and batch download the latest stable releases from official sources in one click. Built with [Apple's macOS automation technologies](https://support.apple.com/guide/automator/welcome/mac).
+> Part of [Shortcuts Collection](https://appleshortcuts.codecraftedapps.com) — curated macOS automation tools by CodeCraftedApps.
+
+Many essential Mac apps — like Chrome, VS Code, and Slack — aren't available in the Apple App Store. Every time you reinstall macOS, you visit a dozen vendor websites to download them all over again. This native macOS AppleScript application does it for you: search by name, build your list, and batch download the latest stable releases from official sources in one click. Built with [Apple's macOS automation technologies](https://support.apple.com/guide/automator/welcome/mac).
 
 [![macOS](https://img.shields.io/badge/macOS-13.0%2B-blue)](https://www.apple.com/macos/)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-native-green)](https://support.apple.com/en-us/116943)
 [![AppleScript](https://img.shields.io/badge/Built%20with-AppleScript-blueviolet)](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Website](https://img.shields.io/badge/Website-nonappstoreapps.codecraftedapps.com-10b981)](https://nonappstoreapps.codecraftedapps.com)
+[![Website](https://img.shields.io/badge/Website-appleshortcuts.codecraftedapps.com-007AFF)](https://appleshortcuts.codecraftedapps.com)
 
 ---
 
@@ -68,8 +70,8 @@ The build script automatically installs the app to your **iCloud Drive > Automat
 ### Build the App
 
 ```bash
-git clone https://github.com/DJCastle/nonappstoreappsdownload.git
-cd nonappstoreappsdownload
+git clone https://github.com/DJCastle/appleshortcuts.git
+cd appleshortcuts
 ./build-automator-app.sh
 ```
 
@@ -189,7 +191,7 @@ See [DISCLAIMER.md](DISCLAIMER.md) for the full disclaimer.
 ├── apps.txt                    # Editable app list (bundled into .app)
 ├── build-automator-app.sh      # Build script (uses Apple's osacompile, auto-installs to iCloud)
 ├── download-apps.sh            # Standalone shell script alternative
-├── docs/                       # Website (GitHub Pages)
+├── (gh-pages branch)            # Website (GitHub Pages)
 ├── DISCLAIMER.md               # Third-party software disclaimer
 ├── LICENSE                     # MIT License
 └── README.md                   # This file
@@ -205,6 +207,6 @@ See [DISCLAIMER.md](DISCLAIMER.md) for the full disclaimer.
 
 ## Links
 
-- **Website:** [nonappstoreapps.codecraftedapps.com](https://nonappstoreapps.codecraftedapps.com)
-- **GitHub:** [github.com/DJCastle/nonappstoreappsdownload](https://github.com/DJCastle/nonappstoreappsdownload)
+- **Website:** [appleshortcuts.codecraftedapps.com](https://appleshortcuts.codecraftedapps.com)
+- **GitHub:** [github.com/DJCastle/appleshortcuts](https://github.com/DJCastle/appleshortcuts)
 - **CodeCraftedApps:** [codecraftedapps.com](https://codecraftedapps.com)

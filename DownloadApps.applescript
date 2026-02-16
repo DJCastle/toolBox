@@ -1,7 +1,7 @@
 -- ============================================================
 --  Non App Store Apps Download
 --  A native macOS AppleScript application
---  https://github.com/DJCastle/nonappstoreappsdownload
+--  https://github.com/DJCastle/appleshortcuts
 --
 --  Built with AppleScript and compiled with Apple's osacompile.
 --  Part of Apple's macOS automation ecosystem.
