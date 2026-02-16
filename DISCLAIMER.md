@@ -92,4 +92,4 @@ macOS Gatekeeper will verify the code signature of downloaded applications befor
 
 ## Contact
 
-Questions or concerns? Open an issue on [GitHub](https://github.com/DJCastle/appleshortcuts/issues) or visit the [CodeCraftedApps Contact page](https://codecraftedapps.com/contact.html).
+Questions or concerns? Open an issue on [GitHub](https://github.com/DJCastle/shortcutcollections/issues) or visit the [CodeCraftedApps Contact page](https://codecraftedapps.com/contact.html).

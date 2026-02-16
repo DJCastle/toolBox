@@ -1,6 +1,6 @@
 # Non App Store Apps Download
 
-> Part of [Shortcuts Collection](https://appleshortcuts.codecraftedapps.com) — curated macOS automation tools by CodeCraftedApps.
+> Part of [Shortcut Collections](https://shortcutcollections.codecraftedapps.com) — curated macOS automation tools by CodeCraftedApps.
 
 Many essential Mac apps — like Chrome, VS Code, and Slack — aren't available in the Apple App Store. Every time you reinstall macOS, you visit a dozen vendor websites to download them all over again. This native macOS AppleScript application does it for you: search by name, build your list, and batch download the latest stable releases from official sources in one click. Built with [Apple's macOS automation technologies](https://support.apple.com/guide/automator/welcome/mac).
 
@@ -8,7 +8,7 @@ Many essential Mac apps — like Chrome, VS Code, and Slack — aren't available
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-native-green)](https://support.apple.com/en-us/116943)
 [![AppleScript](https://img.shields.io/badge/Built%20with-AppleScript-blueviolet)](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Website](https://img.shields.io/badge/Website-appleshortcuts.codecraftedapps.com-007AFF)](https://appleshortcuts.codecraftedapps.com)
+[![Website](https://img.shields.io/badge/Website-shortcutcollections.codecraftedapps.com-007AFF)](https://shortcutcollections.codecraftedapps.com)
 
 ---
 
@@ -70,8 +70,8 @@ The build script automatically installs the app to your **iCloud Drive > Automat
 ### Build the App
 
 ```bash
-git clone https://github.com/DJCastle/appleshortcuts.git
-cd appleshortcuts
+git clone https://github.com/DJCastle/shortcutcollections.git
+cd shortcutcollections
 ./build-automator-app.sh
 ```
 
@@ -207,6 +207,6 @@ See [DISCLAIMER.md](DISCLAIMER.md) for the full disclaimer.
 
 ## Links
 
-- **Website:** [appleshortcuts.codecraftedapps.com](https://appleshortcuts.codecraftedapps.com)
-- **GitHub:** [github.com/DJCastle/appleshortcuts](https://github.com/DJCastle/appleshortcuts)
+- **Website:** [shortcutcollections.codecraftedapps.com](https://shortcutcollections.codecraftedapps.com)
+- **GitHub:** [github.com/DJCastle/shortcutcollections](https://github.com/DJCastle/shortcutcollections)
 - **CodeCraftedApps:** [codecraftedapps.com](https://codecraftedapps.com)
