@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non App Store Apps Download — Shortcut Collections</title>
+  <meta name="description" content="Many Mac apps like Chrome and VS Code aren't in the App Store. This native macOS AppleScript app downloads them all at once from official sources. Build your list, batch download the latest stable releases, and simplify system reloads.">
+  <meta name="keywords" content="macOS, download, apps, Apple Silicon, AppleScript, Automator, non app store, Homebrew Cask, system reload, batch download">
+  <meta name="author" content="CodeCraftedApps">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://shortcutcollections.codecraftedapps.com/tools/nonappstoreapps.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Non App Store Apps Download — Shortcut Collections">
+  <meta property="og:description" content="Many Mac apps like Chrome and VS Code aren't in the App Store. This tool downloads them all at once from official sources. Perfect for system reloads.">
+  <meta property="og:url" content="https://shortcutcollections.codecraftedapps.com/tools/nonappstoreapps.html">
+  <meta property="og:site_name" content="Shortcut Collections">
+  <meta property="og:image" content="https://shortcutcollections.codecraftedapps.com/favicon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Non App Store Apps Download — Shortcut Collections">
+  <meta name="twitter:description" content="Many Mac apps like Chrome and VS Code aren't in the App Store. This tool downloads them all at once from official sources. Perfect for system reloads.">
+  <meta name="twitter:image" content="https://shortcutcollections.codecraftedapps.com/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Non App Store Apps Download",
+    "description": "Many Mac apps like Chrome and VS Code aren't in the App Store. This native macOS AppleScript application downloads them all at once from official vendor sources. Built for system reloads.",
+    "url": "https://shortcutcollections.codecraftedapps.com/tools/nonappstoreapps.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS 13.0+",
+    "license": "https://opensource.org/licenses/MIT",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "CodeCraftedApps",
+      "url": "https://codecraftedapps.com"
+    },
+    "softwareVersion": "2.0.0",
+    "programmingLanguage": "AppleScript",
+    "codeRepository": "https://github.com/DJCastle/shortcutcollections",
+    "downloadUrl": "https://github.com/DJCastle/shortcutcollections/archive/refs/heads/main.zip"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="site-logo">Shortcut<span>Collections</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="https://github.com/DJCastle/shortcutcollections" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <nav class="breadcrumbs container" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="separator">/</span>Tools<span class="separator">/</span>Non App Store Apps Download
+  </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+      <a href="../index.html" class="back-link">Back to collection</a>
+        <h1>Your non&ndash;App Store apps.<br><span>One click. Every time.</span></h1>
+        <p class="tagline">Many essential Mac apps &mdash; like Chrome, VS Code, and Slack &mdash; aren't available in the App Store. You download them from vendor websites every time you reinstall macOS. This native <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">AppleScript</a> application does it all at once: search by name, build your personal list, and batch download the latest stable releases from official sources.</p>
+        <p class="sub-tagline">Always the latest stable release &mdash; download only, nothing is installed or executed. Your list persists between sessions.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">v2.0.0</span>
+          <span class="hero-badge">AppleScript</span>
+          <span class="hero-badge">macOS 13.0+</span>
+          <span class="hero-badge">MIT License</span>
+          <span class="hero-badge">Apple Silicon</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://github.com/DJCastle/shortcutcollections/archive/refs/heads/main.zip" class="btn-primary">Download (.zip)</a>
+          <a href="https://github.com/DJCastle/shortcutcollections" class="btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use With Care -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="container">
+        <div class="disclaimer">
+          <div class="disclaimer-icon">&#9888;&#65039;</div>
+          <div class="disclaimer-content">
+            <h3>Use With Care</h3>
+            <p>This tool is for apps that are <strong>not available in the Apple App Store</strong>. If an app is in the App Store, use the App Store &mdash; it's the safest and easiest way to install software on your Mac. This tool <strong>only downloads</strong> installer files to your Desktop for apps you'd otherwise have to get from vendor websites. It does not install, open, or run anything. Verify the app name and developer before adding it to your list. Only download software you recognize and trust. See the full <a href="https://github.com/DJCastle/shortcutcollections/blob/main/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a> for details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What It's For -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">What It's For</h2>
+        <p class="section-subtitle">Apps like Chrome, VS Code, Slack, and iTerm2 aren't in the App Store. If you've ever reinstalled macOS and spent an hour visiting download pages to get them back, this is for you.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128187;</div>
+            <h3>System Reloads</h3>
+            <p>Just wiped your Mac or set up a new one? Get all your essential apps back in one click instead of visiting a dozen websites. Build your list once, use it every time.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128230;</div>
+            <h3>Local Installer Copies</h3>
+            <p>Keep up-to-date installer files on hand for offline use, multiple machines, or archiving. Run it periodically to refresh your copies with the latest stable releases.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#11015;&#65039;</div>
+            <h3>Batch Downloads</h3>
+            <p>Download everything at once with a live progress bar showing file sizes and transfer speeds. No clicking through download pages one by one.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">How to Use</h2>
+        <p class="section-subtitle">Build the app, then double-click to run.</p>
+        <div class="instructions-grid">
+
+          <div class="instruction-card">
+            <div class="instruction-number">Option A</div>
+            <h3>macOS App (Recommended)</h3>
+            <p>Build the native app and it's automatically installed to your iCloud Automator folder. Manage your app list from the built-in UI.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/shortcutcollections.git</span><br>
+              <span class="command">cd shortcutcollections</span><br><br>
+              <span class="comment"># Build &amp; auto-install to iCloud Automator folder</span><br>
+              <span class="command">./build-automator-app.sh</span>
+            </div>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">The app is automatically copied to <strong>iCloud Drive &gt; Automator</strong> for cross-machine sync. If iCloud is not available, the app is built in the current directory.</p>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Option B</div>
+            <h3>Shell Script</h3>
+            <p>Prefer the terminal? Run the script directly.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/shortcutcollections.git</span><br>
+              <span class="command">cd shortcutcollections</span><br><br>
+              <span class="comment"># Run the download script</span><br>
+              <span class="command">./download-apps.sh</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Default Apps -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Default Apps</h2>
+        <p class="section-subtitle">Included out of the box. All resolved via Homebrew Cask to ensure the latest stable release.</p>
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Application</th>
+                <th>Source</th>
+                <th>Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="app-name">Google Chrome</td>
+                <td>Homebrew Cask</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">Brave Browser</td>
+                <td>Homebrew Cask</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">Visual Studio Code</td>
+                <td>Homebrew Cask</td>
+                <td><span class="app-format">.zip</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">Slack</td>
+                <td>Homebrew Cask</td>
+                <td><span class="app-format">.dmg</span></td>
+              </tr>
+              <tr>
+                <td class="app-name">iTerm2</td>
+                <td>Homebrew Cask</td>
+                <td><span class="app-format">.zip</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manage Your List -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Manage Your App List</h2>
+        <p class="section-subtitle">Add and remove apps right from the app &mdash; or edit the config file directly.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128269;</div>
+            <h3>Search &amp; Add</h3>
+            <p>Click <strong>Manage Apps &rarr; Add App</strong>, type a name like "Firefox" or "Slack", and pick from the results. Added apps are saved permanently and persist between sessions &mdash; your list is always there when you reopen the app.</p>
+            <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.85rem;"><strong>Tip:</strong> Verify you're selecting the right app before adding. Search results may include similarly named software.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128465;&#65039;</div>
+            <h3>Remove Apps</h3>
+            <p>Click <strong>Manage Apps &rarr; Remove App</strong>, select the apps you want to remove (hold Command for multiple), and confirm. Removed apps won't download on future runs.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128221;</div>
+            <h3>Edit apps.txt</h3>
+            <p>Right-click the app &rarr; <strong>Show Package Contents</strong> &rarr; Contents &rarr; Resources &rarr; <strong>apps.txt</strong>. Add lines in the format: <code>App Name | file.dmg | BREW:cask-name</code></p>
+            <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.85rem;">Browse available cask names at <a href="https://formulae.brew.sh/cask/" target="_blank" rel="noopener noreferrer">formulae.brew.sh/cask</a></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Simple and transparent by design.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#127891;</div>
+            <h3>Latest Stable Release</h3>
+            <p>Uses <a href="https://formulae.brew.sh/cask/" target="_blank" rel="noopener noreferrer">Homebrew Cask</a> to resolve the latest stable release for each app at runtime. No beta or pre-release versions &mdash; no hardcoded version numbers to maintain.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#11015;&#65039;</div>
+            <h3>Download Only</h3>
+            <p>Files are downloaded to your Desktop. <strong>Nothing is installed, opened, or executed.</strong> You open the .dmg or .zip yourself and decide what to install.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128274;</div>
+            <h3>Gatekeeper Verified</h3>
+            <p>macOS Gatekeeper automatically verifies the code signature of every downloaded app before it can run. Keep Gatekeeper enabled for protection.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Live Progress</h3>
+            <p>See real-time download progress with file sizes, transfer speeds, and time remaining. Each app's status updates as it downloads.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128194;</div>
+            <h3>Official Sources Only</h3>
+            <p>Every download comes directly from the vendor's servers. No middlemen, no mirrors. BREW: URLs are curated by the open-source Homebrew community.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128260;</div>
+            <h3>Persistent App List</h3>
+            <p>Apps you add are saved permanently. Close and reopen the app &mdash; your list is still there. Build your personal list once, use it across every reload.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#127744;</div>
+            <h3>Open Source</h3>
+            <p>MIT licensed. Read every line of code. Fork it, customize it, share it. No data is collected &mdash; the tool is entirely local.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Built With -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Built With Apple's Automation Technologies</h2>
+        <p class="section-subtitle">A native macOS application &mdash; no third-party frameworks or runtimes required.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128221;</div>
+            <h3>AppleScript</h3>
+            <p>Written in <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank" rel="noopener noreferrer">AppleScript</a>, Apple's built-in scripting language for macOS automation. Uses native dialogs, progress bars, and system integration that ship with every Mac.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#9881;&#65039;</div>
+            <h3>osacompile</h3>
+            <p>Compiled with Apple's <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptX/Concepts/osa.html" target="_blank" rel="noopener noreferrer">osacompile</a> tool into a standard <code>.app</code> bundle. Double-click to run like any native macOS application. Universal binary &mdash; runs on both Apple Silicon and Intel.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128736;&#65039;</div>
+            <h3>macOS Automation</h3>
+            <p>Part of Apple's automation ecosystem alongside <a href="https://support.apple.com/guide/automator/welcome/mac" target="_blank" rel="noopener noreferrer">Automator</a> and Shortcuts. The build script automatically installs to your iCloud Automator folder, keeping it with your other automation tools and syncing across Macs.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- System Permissions -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">System Permissions</h2>
+        <p class="section-subtitle">macOS may ask you to grant access the first time you run the app.</p>
+        <div class="requirements-list">
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Desktop folder</strong> &mdash; where downloaded files are saved</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Internet / Network</strong> &mdash; to resolve latest stable release URLs and download from vendor servers</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>File system (app bundle)</strong> &mdash; to read and save your app list inside the app bundle</div>
+          </div>
+        </div>
+        <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;">These are standard macOS security prompts. You can review or revoke permissions at any time in <strong>System Settings &gt; Privacy &amp; Security</strong>. The app does not access anything beyond what is listed above.</p>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Requirements</h2>
+        <p class="section-subtitle">What you need to run this tool.</p>
+        <div class="requirements-list">
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>macOS 13.0 (Ventura) or later</strong> &mdash; Apple Silicon (M1/M2/M3/M4)</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Internet connection</strong> &mdash; to resolve versions and download from vendor servers</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Terminal access</strong> &mdash; only for building the app (one command)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- iCloud Tip -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="disclaimer" style="border-color: var(--accent);">
+          <div class="disclaimer-icon">&#9729;&#65039;</div>
+          <div class="disclaimer-content">
+            <h3>Automatic iCloud Sync</h3>
+            <p>The build script automatically installs the app to your <strong>iCloud Drive &gt; Automator</strong> folder. Your customized app list syncs across all your Macs and survives system reloads &mdash; just open it from iCloud on your freshly installed system and download everything in one click. If iCloud Drive is not enabled, the app is built locally and you can move it to any iCloud folder manually.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p>Non App Store Apps Download is part of <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>, an independent developer's collection of apps, tools, and open-source projects. Built with <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank" rel="noopener noreferrer">AppleScript</a> and Apple's native automation framework to solve a real problem: every time you reload macOS, you need to re-download all the apps that aren't in the App Store &mdash; Chrome, VS Code, Slack, and others &mdash; from a dozen different vendor websites. This tool lets you build your list once and download everything in one click. Always the latest stable release, always from official sources.</p>
+          <p>This is a download utility &mdash; it downloads files and that's it. It does not install, modify, or execute any software on your behalf. Use it with care, only add apps you trust, and always verify what you're downloading. It's open source &mdash; fork it and make it your own.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="site-logo">Shortcut<span>Collections</span></a>
+          <p class="footer-tagline">Curated macOS automation tools by CodeCraftedApps. Open source, privacy-first.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Links</h4>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="mailto:shortcutcollections@codecraftedapps.com">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://github.com/DJCastle/shortcutcollections" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CodeCraftedApps. All rights reserved. Not affiliated with Apple Inc.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+
+    // Scroll reveal
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
+
+    // Back to top
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+  </script>
+
+  <!-- Buy Me a Coffee — floating button, bottom-right corner -->
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="codecraftopensource" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting and for your support." data-color="#007AFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+</body>
+</html>

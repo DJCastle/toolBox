@@ -1,7 +1,8 @@
 /* ============================================
-   Non App Store Apps Download - Site Stylesheet
+   Shortcut Collections - Site Stylesheet
    Dark theme, matches CodeCraftedApps design
-   Accent: Emerald green (download/fresh theme)
+   Accent: Apple-style gradient accents
+   Primary: #007AFF → #5856D6 → #FF2D55
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -12,19 +13,22 @@
 }
 
 :root {
-  --bg-primary: #0b1210;
-  --bg-secondary: #141f1b;
-  --bg-card: #182420;
-  --bg-card-hover: #1f2e29;
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #16161f;
+  --bg-card-hover: #1c1c28;
   --text-primary: #e8e9ed;
   --text-secondary: #9ca3af;
   --text-muted: #6b7280;
-  --accent: #10b981;
-  --accent-hover: #059669;
-  --accent-glow: rgba(16, 185, 129, 0.15);
-  --accent-soft: rgba(16, 185, 129, 0.1);
-  --border: #1e3029;
-  --border-hover: #10b981;
+  --accent: #007AFF;
+  --accent-hover: #0056CC;
+  --accent-glow: rgba(0, 122, 255, 0.15);
+  --accent-soft: rgba(0, 122, 255, 0.1);
+  --border: #1e1e2e;
+  --border-hover: #007AFF;
+  --gradient-primary: linear-gradient(135deg, #007AFF, #5856D6, #FF2D55);
+  --gradient-text: linear-gradient(135deg, #007AFF, #5856D6, #FF2D55);
+  --gradient-subtle: linear-gradient(135deg, rgba(0,122,255,0.15), rgba(88,86,214,0.15), rgba(255,45,85,0.08));
   --radius: 12px;
   --radius-sm: 8px;
   --max-width: 1100px;
@@ -62,6 +66,18 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Very faint background image — barely visible watermark effect */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('../shortcutssite.png') center / cover no-repeat;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
 }
 
 a {
@@ -104,7 +120,7 @@ main {
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  background: rgba(11, 18, 16, 0.85);
+  background: rgba(10, 10, 15, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 100;
@@ -183,9 +199,9 @@ main {
 .hero {
   padding: 80px 0 60px;
   text-align: center;
-  background: linear-gradient(to bottom, var(--accent-glow), transparent);
+  background: linear-gradient(to bottom, var(--gradient-subtle), transparent);
   /* To swap in a real banner image:
-     background: linear-gradient(to bottom, rgba(11,18,16,0.55), var(--bg-primary)),
+     background: linear-gradient(to bottom, rgba(10,10,15,0.55), var(--bg-primary)),
                  url('images/hero-banner.jpg') center/cover no-repeat; */
 }
 
@@ -232,7 +248,7 @@ main {
   border-radius: 20px;
   background: var(--accent-soft);
   color: var(--accent);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(0, 122, 255, 0.2);
 }
 
 .hero-actions {
@@ -251,16 +267,16 @@ main {
   font-weight: 700;
   padding: 12px 28px;
   border-radius: var(--radius-sm);
-  background: var(--accent);
-  color: #0b1210;
+  background: var(--gradient-primary);
+  color: #fff;
   border: none;
   transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
-  color: #0b1210;
+  background: linear-gradient(135deg, #0056CC, #4240B0, #D91A42);
+  color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 4px 16px var(--accent-glow);
 }
@@ -435,14 +451,14 @@ main {
   border-radius: 20px;
   background: var(--accent-soft);
   color: var(--accent);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(0, 122, 255, 0.2);
   margin-bottom: 12px;
 }
 
 /* --- Customize Callout --- */
 .customize-callout {
   background: var(--accent-soft);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(0, 122, 255, 0.2);
   border-radius: var(--radius);
   padding: 24px;
   text-align: center;
@@ -460,7 +476,7 @@ main {
 }
 
 .customize-callout code {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(0, 122, 255, 0.12);
   color: var(--accent);
   padding: 2px 6px;
   border-radius: 4px;
@@ -574,9 +590,9 @@ main {
 .page-header {
   padding: 60px 0 40px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(to bottom, var(--accent-glow), transparent);
+  background: linear-gradient(to bottom, var(--gradient-subtle), transparent);
   /* To swap in a real banner image:
-     background: linear-gradient(to bottom, rgba(11,18,16,0.6), var(--bg-primary)),
+     background: linear-gradient(to bottom, rgba(10,10,15,0.6), var(--bg-primary)),
                  url('images/page-banner.jpg') center/cover no-repeat; */
 }
 
@@ -642,7 +658,7 @@ main {
 }
 
 .content-body code {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(0, 122, 255, 0.12);
   color: var(--accent);
   padding: 2px 6px;
   border-radius: 4px;
@@ -836,6 +852,158 @@ body::after {
   font-size: 0.75rem;
 }
 
+/* --- Gradient Text Utility --- */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Tool Card Grid & Components --- */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+}
+
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tool-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 122, 255, 0.1);
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.tool-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.tool-card-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  flex-grow: 1;
+  margin-bottom: 16px;
+}
+
+.tool-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tool-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+.tool-card-tag--automator {
+  background: rgba(88, 86, 214, 0.1);
+  color: #5856D6;
+  border-color: rgba(88, 86, 214, 0.2);
+}
+
+.tool-card-tag--shortcut {
+  background: rgba(255, 45, 85, 0.1);
+  color: #FF2D55;
+  border-color: rgba(255, 45, 85, 0.2);
+}
+
+.tool-card-tag--script {
+  background: rgba(0, 122, 255, 0.1);
+  color: #007AFF;
+  border-color: rgba(0, 122, 255, 0.2);
+}
+
+.tool-card-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease;
+}
+
+.tool-card-link:hover {
+  gap: 8px;
+}
+
+.tool-card-link::after {
+  content: '\2192';
+}
+
+/* --- Back Link --- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease, gap 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.back-link::before {
+  content: '\2190';
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .hero {
@@ -894,7 +1062,7 @@ body::after {
     top: 64px;
     left: 0;
     right: 0;
-    background: rgba(11, 18, 16, 0.95);
+    background: rgba(10, 10, 15, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
@@ -935,6 +1103,11 @@ body::after {
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
