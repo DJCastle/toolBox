@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shortcutcollections.codecraftedapps.com/</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://toolbox.codecraftedapps.com/</loc>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://shortcutcollections.codecraftedapps.com/tools/nonappstoreapps.html</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://toolbox.codecraftedapps.com/tools/nonappstoreapps.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shortcutcollections.codecraftedapps.com/privacy.html</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://toolbox.codecraftedapps.com/privacy.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://shortcutcollections.codecraftedapps.com/terms.html</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://toolbox.codecraftedapps.com/terms.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

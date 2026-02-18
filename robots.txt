@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shortcutcollections.codecraftedapps.com/sitemap.xml
+Sitemap: https://toolbox.codecraftedapps.com/sitemap.xml
