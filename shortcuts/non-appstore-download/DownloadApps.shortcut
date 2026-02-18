@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WFWorkflowActions</key>
+	<array>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>Non App Store Apps Download
+
+Edit the APPS list in the shell script below to add or remove apps.
+Find cask names at: https://formulae.brew.sh/cask/</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.runshellscript</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>B8F3A2D1-47E6-4C9B-A8D5-E2F1C3B4A567</string>
+				<key>Shell</key>
+				<string>/bin/zsh</string>
+				<key>WFShellScript</key>
+				<string>#!/bin/zsh
+# ============================================================
+#  Non App Store Apps Download — Apple Shortcut
+#  https://github.com/DJCastle/toolBox
+#
+#  Edit the APPS list below to add or remove apps.
+#  Find cask names at: https://formulae.brew.sh/cask/
+# ============================================================
+
+APPS=(
+  "google-chrome"
+  "brave-browser"
+  "visual-studio-code"
+  "slack"
+  "iterm2"
+)
+
+DEST="$HOME/Desktop"
+SUCCESS=0
+FAIL=0
+RESULTS=""
+
+for CASK in "${APPS[@]}"; do
+  JSON=$(curl -s --connect-timeout 10 --max-time 15 "https://formulae.brew.sh/api/cask/${CASK}.json" 2&gt;/dev/null)
+
+  if [[ -z "$JSON" ]]; then
+    FAIL=$((FAIL + 1))
+    RESULTS+="✗  ${CASK} — API request failed\n"
+    continue
+  fi
+
+  URL=$(echo "$JSON" | python3 -c "import sys,json; print(json.load(sys.stdin).get('url',''))" 2&gt;/dev/null)
+  VERSION=$(echo "$JSON" | python3 -c "import sys,json; print(json.load(sys.stdin).get('version',''))" 2&gt;/dev/null)
+  NAME=$(echo "$JSON" | python3 -c "import sys,json; n=json.load(sys.stdin).get('name',[]); print(n[0] if n else '')" 2&gt;/dev/null)
+
+  if [[ -z "$URL" ]]; then
+    FAIL=$((FAIL + 1))
+    RESULTS+="✗  ${NAME:-$CASK} — No download URL\n"
+    continue
+  fi
+
+  FILENAME=$(basename "$URL")
+  DESTPATH="${DEST}/${FILENAME}"
+
+  curl -L -s --connect-timeout 15 --max-time 300 -o "$DESTPATH" "$URL" 2&gt;/dev/null
+
+  if [[ -f "$DESTPATH" ]]; then
+    SIZE=$(stat -f '%z' "$DESTPATH" 2&gt;/dev/null || echo 0)
+    if [[ "$SIZE" -gt 1000 ]]; then
+      SIZE_MB=$((SIZE / 1048576))
+      SUCCESS=$((SUCCESS + 1))
+      RESULTS+="✓  ${NAME:-$CASK} v${VERSION} — ${SIZE_MB} MB\n"
+    else
+      FAIL=$((FAIL + 1))
+      RESULTS+="✗  ${NAME:-$CASK} — Download too small\n"
+      rm -f "$DESTPATH" 2&gt;/dev/null
+    fi
+  else
+    FAIL=$((FAIL + 1))
+    RESULTS+="✗  ${NAME:-$CASK} — Download failed\n"
+  fi
+done
+
+TOTAL=$((SUCCESS + FAIL))
+
+echo "Non App Store Apps Download"
+echo "=========================="
+echo ""
+if [[ "$FAIL" -eq 0 ]]; then
+  echo "✓  All ${SUCCESS} apps downloaded successfully"
+else
+  echo "${SUCCESS} of ${TOTAL} downloaded • ${FAIL} failed"
+fi
+echo ""
+printf "%b" "$RESULTS"
+echo ""
+echo "Files saved to Desktop."
+echo "Open each .dmg/.zip to install."</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.showresult</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>Text</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>attachmentsByRange</key>
+						<dict>
+							<key>{0, 1}</key>
+							<dict>
+								<key>OutputName</key>
+								<string>Shell Script Result</string>
+								<key>OutputUUID</key>
+								<string>B8F3A2D1-47E6-4C9B-A8D5-E2F1C3B4A567</string>
+								<key>Type</key>
+								<string>ActionOutput</string>
+							</dict>
+						</dict>
+						<key>string</key>
+						<string>&#xFFFC;</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenString</string>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>WFWorkflowClientVersion</key>
+	<string>2612.0.4</string>
+	<key>WFWorkflowHasOutputFallback</key>
+	<false/>
+	<key>WFWorkflowHasShortcutInputVariables</key>
+	<false/>
+	<key>WFWorkflowIcon</key>
+	<dict>
+		<key>WFWorkflowIconGlyphNumber</key>
+		<integer>59722</integer>
+		<key>WFWorkflowIconStartColor</key>
+		<integer>4282601983</integer>
+	</dict>
+	<key>WFWorkflowImportQuestions</key>
+	<array/>
+	<key>WFWorkflowInputContentItemClasses</key>
+	<array>
+		<string>WFStringContentItem</string>
+	</array>
+	<key>WFWorkflowMinimumClientVersion</key>
+	<integer>900</integer>
+	<key>WFWorkflowMinimumClientVersionString</key>
+	<string>900</string>
+	<key>WFWorkflowTypes</key>
+	<array>
+		<string>NCWidget</string>
+	</array>
+</dict>
+</plist>

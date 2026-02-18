@@ -25,7 +25,7 @@ download() {
 echo "Downloading apps to Desktop..."
 echo ""
 echo "Note: This shell script uses hardcoded URLs. For automatic latest-version"
-echo "resolution via Homebrew Cask, use the AppleScript app instead (./build-automator-app.sh)."
+echo "resolution via Homebrew Cask, use the AppleScript app instead (see automator/non-appstore-download/)."
 echo ""
 
 # Resolve a Homebrew Cask URL and download it
