@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repo Sync &mdash; Toolbox</title>
+  <meta name="description" content="Clone and update all your GitHub repos into ~/Developer with an interactive menu. Filter by platform topic, pick specific repos, or sync everything at once. macOS and Windows.">
+  <meta name="keywords" content="GitHub, repos, clone, sync, pull, automation, shell script, PowerShell, macOS, Windows, developer tools">
+  <meta name="author" content="CodeCraftedApps">
+
+  <link rel="canonical" href="https://toolbox.codecraftedapps.com/tools/reposync.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Repo Sync &mdash; Toolbox">
+  <meta property="og:description" content="Clone and update all your GitHub repos with an interactive menu. Filter by platform, pick repos, or sync everything.">
+  <meta property="og:url" content="https://toolbox.codecraftedapps.com/tools/reposync.html">
+  <meta property="og:site_name" content="Toolbox">
+  <meta property="og:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Repo Sync &mdash; Toolbox">
+  <meta name="twitter:description" content="Clone and update all your GitHub repos with an interactive menu.">
+  <meta name="twitter:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Repo Sync",
+    "description": "Clone and update all your GitHub repos into ~/Developer with an interactive menu. Filter by platform topic, pick specific repos, or sync everything at once.",
+    "url": "https://toolbox.codecraftedapps.com/tools/reposync.html",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS, Windows",
+    "license": "https://opensource.org/licenses/MIT",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "CodeCraftedApps", "url": "https://codecraftedapps.com" },
+    "codeRepository": "https://github.com/DJCastle/toolBox"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="site-logo">Tool<span>box</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <nav class="breadcrumbs container" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="separator">/</span>Tools<span class="separator">/</span>Repo Sync
+  </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+      <a href="../index.html" class="back-link">Back to collection</a>
+        <h1>All your repos.<br><span>Cloned and current.</span></h1>
+        <p class="tagline">Clones all your GitHub repos into <code style="background: rgba(0, 122, 255, 0.12); color: var(--accent); padding: 2px 6px; border-radius: 4px;">~/Developer</code> and keeps them updated. Interactive menu lets you sync by platform, pick specific repos, or grab everything. Already-cloned repos get pulled &mdash; idempotent and safe to run anytime.</p>
+        <p class="sub-tagline">Auto-detects your GitHub username. Filters repos by platform topic.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">Shell Script</span>
+          <span class="hero-badge">PowerShell</span>
+          <span class="hero-badge">macOS</span>
+          <span class="hero-badge">Windows</span>
+          <span class="hero-badge">MIT License</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://github.com/DJCastle/toolBox/tree/main/scripts/repo-sync" class="btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://github.com/DJCastle/toolBox/archive/refs/heads/main.zip" class="btn-secondary">Download (.zip)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What It's For -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">What It's For</h2>
+        <p class="section-subtitle">If you have repos scattered across machines or need to set up a fresh system, this gets everything in one place.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128187;</div>
+            <h3>New Machine Setup</h3>
+            <p>Clone all your repos at once instead of remembering each one. Perfect after a fresh OS install or setting up a new dev machine.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128260;</div>
+            <h3>Keep Repos Current</h3>
+            <p>Run it periodically to pull updates for all your repos. Already-cloned repos are checked against remote &mdash; only updated if behind.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#127758;</div>
+            <h3>Platform-Aware</h3>
+            <p>Tag repos with GitHub topics (<code>macos</code>, <code>windows</code>, <code>cross-platform</code>) and the script only syncs what belongs on the current OS.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">How to Use</h2>
+        <p class="section-subtitle">Four ways to run it &mdash; pick the one that fits your workflow.</p>
+        <div class="instructions-grid">
+
+          <div class="instruction-card">
+            <div class="instruction-number">macOS &mdash; Terminal</div>
+            <h3>Shell Script</h3>
+            <p>Run directly from Terminal.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/toolBox.git</span><br>
+              <span class="command">cd toolBox</span><br><br>
+              <span class="comment"># Interactive clone/update</span><br>
+              <span class="command">bash scripts/repo-sync/clone-repos.sh</span><br><br>
+              <span class="comment"># Report only &mdash; no changes</span><br>
+              <span class="command">bash scripts/repo-sync/clone-repos.sh --check</span>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Windows &mdash; PowerShell</div>
+            <h3>PowerShell Script</h3>
+            <p>Run from PowerShell.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/toolBox.git</span><br>
+              <span class="command">cd toolBox</span><br><br>
+              <span class="comment"># Interactive clone/update</span><br>
+              <span class="command">.\scripts\repo-sync\clone-repos.ps1</span><br><br>
+              <span class="comment"># Report only &mdash; no changes</span><br>
+              <span class="command">.\scripts\repo-sync\clone-repos.ps1 -Check</span>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">macOS &mdash; One Click</div>
+            <h3>Apple Shortcut</h3>
+            <p>Import into Shortcuts.app and run with one click.</p>
+            <div class="code-block">
+              <span class="command">open shortcuts/repo-sync/Dev-Clone-Repos.shortcut</span>
+            </div>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">Requires enabling "Allow Running Scripts" in Shortcuts &gt; Settings &gt; Advanced. Disable after use.</p>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Windows &mdash; One Click</div>
+            <h3>Power Automate Desktop</h3>
+            <p>Import the PAD flow and run with one click.</p>
+            <div class="code-block">
+              <span class="comment"># Open the .pad file, copy contents into a new PAD flow</span><br>
+              <span class="command">pad-flows/repo-sync/Dev-Clone-Repos.pad</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Menu -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Interactive Menu</h2>
+        <p class="section-subtitle">Choose how to sync when you run the script.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">1&#65039;&#8419;</div>
+            <h3>This OS Only</h3>
+            <p>Syncs repos tagged with the current platform (<code>macos</code> or <code>windows</code>) plus <code>cross-platform</code>. The default for most users.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">2&#65039;&#8419;</div>
+            <h3>All Repos</h3>
+            <p>Syncs every repo regardless of platform tag. Useful if you want everything in one place or work across both platforms.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">3&#65039;&#8419;</div>
+            <h3>Pick from List</h3>
+            <p>Shows a numbered list with platform indicators. Pick specific repos by number. Colored dots show which OS each repo targets.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Filtering -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Platform Filtering</h2>
+        <p class="section-subtitle">Tag your repos with <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics" target="_blank" rel="noopener noreferrer">GitHub topics</a> to control which repos sync on which OS.</p>
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Topic</th>
+                <th>macOS</th>
+                <th>Windows</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="app-name">macos</td><td>Cloned</td><td>Skipped</td></tr>
+              <tr><td class="app-name">windows</td><td>Skipped</td><td>Cloned</td></tr>
+              <tr><td class="app-name">cross-platform</td><td>Cloned</td><td>Cloned</td></tr>
+              <tr><td class="app-name"><em>(no topic)</em></td><td>Skipped with warning</td><td>Skipped with warning</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="code-block" style="margin-top: 16px;">
+          <span class="comment"># Tag a repo for macOS</span><br>
+          <span class="command">gh repo edit your-username/repo-name --add-topic macos</span><br><br>
+          <span class="comment"># Tag a repo for both platforms</span><br>
+          <span class="command">gh repo edit your-username/repo-name --add-topic cross-platform</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Configuration -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Configuration</h2>
+        <p class="section-subtitle">Customize at the top of each script.</p>
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="app-name">GITHUB_USER</td><td><em>auto-detect</em></td><td>Leave empty to detect from <code>gh auth</code>. Or set explicitly.</td></tr>
+              <tr><td class="app-name">DEV_DIR</td><td>~/Developer</td><td>Where repos are cloned.</td></tr>
+              <tr><td class="app-name">SKIP_REPOS</td><td><em>empty</em></td><td>Repos to skip (managed separately).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128100;</div>
+            <h3>Auto-Detect Username</h3>
+            <p>Automatically detects your GitHub username from <code>gh auth</code>. No hardcoded values &mdash; just authenticate and go.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128274;</div>
+            <h3>Auth Prompt</h3>
+            <p>If GitHub CLI isn't authenticated, the script offers to log you in right there. No need to run a separate command first.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Check Mode</h3>
+            <p>Use <code>--check</code> or <code>-Check</code> to see what's cloned, what has updates, and what's missing &mdash; without making any changes.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Requirements</h2>
+        <div class="requirements-list">
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong><a href="https://cli.github.com/" target="_blank" rel="noopener noreferrer">gh</a> (GitHub CLI)</strong> &mdash; installed by brew-setup.sh (macOS) or choco-setup.ps1 (Windows)</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>jq</strong> (macOS only) &mdash; installed by brew-setup.sh</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Internet connection</strong> &mdash; to fetch repo list and clone/pull from GitHub</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p>Repo Sync is part of <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a> Toolbox, a collection of open-source automation tools for macOS and Windows. It uses standard Git operations (<code>git clone</code> and <code>git pull --ff-only</code>) &mdash; no files are modified beyond normal Git behavior. Your local changes are safe; the script won't force-push or overwrite anything.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="site-logo">Tool<span>box</span></a>
+          <p class="footer-tagline">Curated macOS and Windows automation tools by CodeCraftedApps. Open source, privacy-first.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Links</h4>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="mailto:toolbox@codecraftedapps.com">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CodeCraftedApps. All rights reserved. Not affiliated with Apple Inc. or Microsoft Corporation.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', function(e) { e.stopPropagation(); nav.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove('open'); });
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', function() { backToTop.classList.toggle('visible', window.scrollY > 300); });
+      backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+  })();
+  </script>
+
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="codecraftopensource" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting and for your support." data-color="#007AFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+</body>
+</html>

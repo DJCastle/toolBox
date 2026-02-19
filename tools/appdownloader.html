@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Downloader &mdash; Toolbox</title>
+  <meta name="description" content="Download installer files for apps not in the App Store or Microsoft Store. Tracks versions across runs to detect updates. Download only &mdash; nothing is installed or executed.">
+  <meta name="keywords" content="macOS, Windows, download, apps, installer, Homebrew Cask, Chocolatey, batch download, version tracking, automation">
+  <meta name="author" content="CodeCraftedApps">
+
+  <link rel="canonical" href="https://toolbox.codecraftedapps.com/tools/appdownloader.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="App Downloader &mdash; Toolbox">
+  <meta property="og:description" content="Download installer files for apps not in the App Store or Microsoft Store. Tracks versions to detect updates. Download only.">
+  <meta property="og:url" content="https://toolbox.codecraftedapps.com/tools/appdownloader.html">
+  <meta property="og:site_name" content="Toolbox">
+  <meta property="og:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="App Downloader &mdash; Toolbox">
+  <meta name="twitter:description" content="Download installer files for apps not in the App Store or Microsoft Store. Tracks versions to detect updates.">
+  <meta name="twitter:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "App Downloader",
+    "description": "Download installer files for apps not in the App Store or Microsoft Store. Tracks versions across runs to detect updates. Download only.",
+    "url": "https://toolbox.codecraftedapps.com/tools/appdownloader.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS, Windows",
+    "license": "https://opensource.org/licenses/MIT",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "CodeCraftedApps", "url": "https://codecraftedapps.com" },
+    "codeRepository": "https://github.com/DJCastle/toolBox"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="site-logo">Tool<span>box</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <nav class="breadcrumbs container" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="separator">/</span>Tools<span class="separator">/</span>App Downloader
+  </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+      <a href="../index.html" class="back-link">Back to collection</a>
+        <h1>Your essential apps.<br><span>Downloaded in one click.</span></h1>
+        <p class="tagline">Downloads installer files for apps that aren't in the App Store or Microsoft Store. Resolves the latest stable release from trusted sources, tracks versions across runs, and tells you when updates are available. Files go to your Downloads folder &mdash; nothing is installed or executed.</p>
+        <p class="sub-tagline">Download only. Verify before installing. Your responsibility after download.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">Shell Script</span>
+          <span class="hero-badge">PowerShell</span>
+          <span class="hero-badge">macOS</span>
+          <span class="hero-badge">Windows</span>
+          <span class="hero-badge">MIT License</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://github.com/DJCastle/toolBox/tree/main/scripts/app-downloader" class="btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://github.com/DJCastle/toolBox/archive/refs/heads/main.zip" class="btn-secondary">Download (.zip)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="container">
+        <div class="disclaimer">
+          <div class="disclaimer-icon">&#9888;&#65039;</div>
+          <div class="disclaimer-content">
+            <h3>Download Only</h3>
+            <p>This tool <strong>only downloads</strong> installer files to your Downloads folder. It does not install, open, modify, or execute any software. Verify the app name and developer before installing anything you've downloaded. Only download software you recognize and trust. See the full <a href="https://github.com/DJCastle/toolBox/blob/main/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a> for details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What It's For -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">What It's For</h2>
+        <p class="section-subtitle">Apps like Chrome, VS Code, and Slack require downloading from vendor websites. This does it all at once.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128187;</div>
+            <h3>System Reloads</h3>
+            <p>Just wiped your system? Get all your essential app installers back in one command instead of visiting individual download pages.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128260;</div>
+            <h3>Version Tracking</h3>
+            <p>Tracks what you've downloaded. On each run, compares against the latest available version and tells you when updates are available.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#11015;&#65039;</div>
+            <h3>Batch Downloads</h3>
+            <p>Download everything at once with progress bars showing file sizes and transfer speeds. No clicking through download pages one by one.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">How to Use</h2>
+        <p class="section-subtitle">Four ways to run it &mdash; pick the one that fits your workflow.</p>
+        <div class="instructions-grid">
+
+          <div class="instruction-card">
+            <div class="instruction-number">macOS &mdash; Terminal</div>
+            <h3>Shell Script</h3>
+            <p>Run directly from Terminal.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/toolBox.git</span><br>
+              <span class="command">cd toolBox</span><br><br>
+              <span class="comment"># Download all apps</span><br>
+              <span class="command">bash scripts/app-downloader/download-apps.sh</span><br><br>
+              <span class="comment"># Report only &mdash; no downloads</span><br>
+              <span class="command">bash scripts/app-downloader/download-apps.sh --check</span>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Windows &mdash; PowerShell</div>
+            <h3>PowerShell Script</h3>
+            <p>Run from PowerShell.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/toolBox.git</span><br>
+              <span class="command">cd toolBox</span><br><br>
+              <span class="comment"># Download all apps</span><br>
+              <span class="command">.\scripts\app-downloader\download-apps.ps1</span><br><br>
+              <span class="comment"># Report only &mdash; no downloads</span><br>
+              <span class="command">.\scripts\app-downloader\download-apps.ps1 -Check</span>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">macOS &mdash; One Click</div>
+            <h3>Apple Shortcut</h3>
+            <p>Import into Shortcuts.app and run with one click.</p>
+            <div class="code-block">
+              <span class="command">open shortcuts/app-downloader/Dev-Download-Apps.shortcut</span>
+            </div>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">Requires enabling "Allow Running Scripts" in Shortcuts &gt; Settings &gt; Advanced. Disable after use.</p>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Windows &mdash; One Click</div>
+            <h3>Power Automate Desktop</h3>
+            <p>Import the PAD flow and run with one click.</p>
+            <div class="code-block">
+              <span class="comment"># Open the .pad file, copy contents into a new PAD flow</span><br>
+              <span class="command">pad-flows/app-downloader/Dev-Download-Apps.pad</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Default Apps -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Default Apps</h2>
+        <p class="section-subtitle">Included out of the box. Edit the arrays in each script to customize.</p>
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Application</th>
+                <th>macOS Source</th>
+                <th>Windows Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="app-name">Google Chrome</td>
+                <td>Homebrew Cask</td>
+                <td>Vendor URL</td>
+              </tr>
+              <tr>
+                <td class="app-name">Brave Browser</td>
+                <td>Homebrew Cask</td>
+                <td>Vendor URL</td>
+              </tr>
+              <tr>
+                <td class="app-name">Visual Studio Code</td>
+                <td>Homebrew Cask</td>
+                <td>Vendor URL</td>
+              </tr>
+              <tr>
+                <td class="app-name">Slack</td>
+                <td>Homebrew Cask</td>
+                <td>Vendor URL</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customization -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="customize-callout">
+          <p><strong>Customize Your App List</strong></p>
+          <p><strong>macOS:</strong> Edit the <code>CASK_TOKENS</code> array. Find cask names at <a href="https://formulae.brew.sh/cask/" target="_blank" rel="noopener noreferrer">formulae.brew.sh/cask</a>.</p>
+          <p><strong>Windows:</strong> Edit the <code>$Apps</code> array with name, choco ID, URL, and filename. For GitHub-hosted apps, add <code>Dynamic = $true</code> to auto-resolve the latest release.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Version Tracking</h3>
+            <p>Saves downloaded versions to a <code>.download-app-versions</code> file. On re-run, compares against the latest version and shows: <em>Update available: v1.2 &rarr; v1.3</em></p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#127891;</div>
+            <h3>Trusted Sources</h3>
+            <p>macOS resolves URLs from <a href="https://formulae.brew.sh/cask/" target="_blank" rel="noopener noreferrer">Homebrew Cask</a> (community-maintained, official URLs). Windows uses vendor download URLs sourced from Chocolatey package definitions.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128230;</div>
+            <h3>Check Mode</h3>
+            <p>Use <code>--check</code> or <code>-Check</code> to see what's downloaded, what has updates, and what's missing &mdash; without downloading anything.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Progress &amp; Stats</h3>
+            <p>Shows download progress, file sizes, transfer speeds, and elapsed time. Color-coded status for each app. Summary at the end.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128274;</div>
+            <h3>Download Only</h3>
+            <p>Files are saved to your Downloads folder. Nothing is installed, opened, or executed. You decide what to do with them.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#127744;</div>
+            <h3>Open Source</h3>
+            <p>MIT licensed. Read every line of code. Fork it, customize the app list, share it. No data is collected.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Requirements</h2>
+        <div class="requirements-list">
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>macOS:</strong> Homebrew (for URL resolution only), jq, internet connection</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Windows:</strong> Internet connection. Chocolatey is optional (used to check if apps are already installed).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p>App Downloader is part of <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a> Toolbox, a collection of open-source automation tools for macOS and Windows. It's a simpler alternative to the <a href="nonappstoreapps.html">Non App Store Apps Download</a> tool &mdash; no GUI, no search, just a preconfigured list of apps that downloads with one command. Perfect for scripted setups or as part of an automated provisioning workflow.</p>
+          <p>This is a download utility. It does not install, modify, or execute any software. Verify what you're downloading and only install software you trust.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="site-logo">Tool<span>box</span></a>
+          <p class="footer-tagline">Curated macOS and Windows automation tools by CodeCraftedApps. Open source, privacy-first.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Links</h4>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="mailto:toolbox@codecraftedapps.com">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CodeCraftedApps. All rights reserved. Not affiliated with Apple Inc. or Microsoft Corporation.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', function(e) { e.stopPropagation(); nav.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove('open'); });
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', function() { backToTop.classList.toggle('visible', window.scrollY > 300); });
+      backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+  })();
+  </script>
+
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="codecraftopensource" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting and for your support." data-color="#007AFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+</body>
+</html>

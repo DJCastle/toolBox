@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Manager Setup &mdash; Toolbox</title>
+  <meta name="description" content="Bootstrap a macOS or Windows dev environment from scratch. Installs Homebrew or Chocolatey, CLI tools, GUI apps, and verifies environment health. Idempotent and safe to run anytime.">
+  <meta name="keywords" content="macOS, Windows, Homebrew, Chocolatey, dev environment, setup, automation, shell script, PowerShell, package manager">
+  <meta name="author" content="CodeCraftedApps">
+
+  <link rel="canonical" href="https://toolbox.codecraftedapps.com/tools/packagemanagersetup.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Package Manager Setup &mdash; Toolbox">
+  <meta property="og:description" content="Bootstrap a macOS or Windows dev environment from scratch. Installs Homebrew or Chocolatey, CLI tools, GUI apps, and verifies environment health.">
+  <meta property="og:url" content="https://toolbox.codecraftedapps.com/tools/packagemanagersetup.html">
+  <meta property="og:site_name" content="Toolbox">
+  <meta property="og:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Package Manager Setup &mdash; Toolbox">
+  <meta name="twitter:description" content="Bootstrap a macOS or Windows dev environment from scratch with one command.">
+  <meta name="twitter:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Package Manager Setup",
+    "description": "Bootstrap a macOS or Windows dev environment from scratch. Installs Homebrew or Chocolatey, CLI tools, GUI apps, and verifies environment health.",
+    "url": "https://toolbox.codecraftedapps.com/tools/packagemanagersetup.html",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS, Windows",
+    "license": "https://opensource.org/licenses/MIT",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "CodeCraftedApps", "url": "https://codecraftedapps.com" },
+    "codeRepository": "https://github.com/DJCastle/toolBox"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="site-logo">Tool<span>box</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <nav class="breadcrumbs container" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="separator">/</span>Tools<span class="separator">/</span>Package Manager Setup
+  </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+      <a href="../index.html" class="back-link">Back to collection</a>
+        <h1>Your dev environment.<br><span>One command.</span></h1>
+        <p class="tagline">A single script that installs your package manager, CLI tools, GUI apps, and verifies everything is healthy. Run it on a fresh system or use it to keep an existing one up to date. Idempotent &mdash; safe to run as often as you like.</p>
+        <p class="sub-tagline">Homebrew on macOS. Chocolatey on Windows. Same workflow on both.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">Shell Script</span>
+          <span class="hero-badge">PowerShell</span>
+          <span class="hero-badge">macOS</span>
+          <span class="hero-badge">Windows</span>
+          <span class="hero-badge">MIT License</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://github.com/DJCastle/toolBox/tree/main/scripts/package-manager-setup" class="btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://github.com/DJCastle/toolBox/archive/refs/heads/main.zip" class="btn-secondary">Download (.zip)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What It's For -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">What It's For</h2>
+        <p class="section-subtitle">Setting up a development environment shouldn't take hours of manual installs. This script does it all.</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128187;</div>
+            <h3>Fresh System Setup</h3>
+            <p>Just wiped your machine or got a new one? Run a single command to install everything you need &mdash; package manager, CLI tools, editors, and more.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128260;</div>
+            <h3>Keep It Current</h3>
+            <p>Already set up? Run it again to upgrade outdated packages, install anything missing, and verify your environment is healthy. Safe to run anytime.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Health Check Mode</h3>
+            <p>Use <code>--check</code> (macOS) or <code>-Check</code> (Windows) to see what's installed, outdated, or missing &mdash; without making any changes.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">How to Use</h2>
+        <p class="section-subtitle">Four ways to run it &mdash; pick the one that fits your workflow.</p>
+        <div class="instructions-grid">
+
+          <div class="instruction-card">
+            <div class="instruction-number">macOS &mdash; Terminal</div>
+            <h3>Shell Script</h3>
+            <p>Run directly from Terminal.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/toolBox.git</span><br>
+              <span class="command">cd toolBox</span><br><br>
+              <span class="comment"># Full install + upgrade</span><br>
+              <span class="command">bash scripts/package-manager-setup/brew-setup.sh</span><br><br>
+              <span class="comment"># Report only &mdash; no changes</span><br>
+              <span class="command">bash scripts/package-manager-setup/brew-setup.sh --check</span>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Windows &mdash; PowerShell</div>
+            <h3>PowerShell Script</h3>
+            <p>Run as Administrator in PowerShell.</p>
+            <div class="code-block">
+              <span class="comment"># Clone the repository</span><br>
+              <span class="command">git clone https://github.com/DJCastle/toolBox.git</span><br>
+              <span class="command">cd toolBox</span><br><br>
+              <span class="comment"># Full install + upgrade (run as Admin)</span><br>
+              <span class="command">.\scripts\package-manager-setup\choco-setup.ps1</span><br><br>
+              <span class="comment"># Report only &mdash; no changes</span><br>
+              <span class="command">.\scripts\package-manager-setup\choco-setup.ps1 -Check</span>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">macOS &mdash; One Click</div>
+            <h3>Apple Shortcut</h3>
+            <p>Import into Shortcuts.app and run with one click.</p>
+            <div class="code-block">
+              <span class="comment"># Import the shortcut</span><br>
+              <span class="command">open shortcuts/package-manager-setup/Dev-Brew-Setup.shortcut</span>
+            </div>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">Requires enabling "Allow Running Scripts" in Shortcuts &gt; Settings &gt; Advanced. Disable after use.</p>
+          </div>
+
+          <div class="instruction-card">
+            <div class="instruction-number">Windows &mdash; One Click</div>
+            <h3>Power Automate Desktop</h3>
+            <p>Import the PAD flow and run with one click.</p>
+            <div class="code-block">
+              <span class="comment"># Open the .pad file in a text editor</span><br>
+              <span class="comment"># Copy the contents into a new PAD flow</span><br>
+              <span class="command">pad-flows/package-manager-setup/Dev-Choco-Setup.pad</span>
+            </div>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">The flow requests administrator privileges (UAC prompt) because Chocolatey requires elevation.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Default Packages -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Default Packages</h2>
+        <p class="section-subtitle">What gets installed out of the box. Edit the arrays in each script to customize.</p>
+        <div class="instructions-grid">
+
+          <div class="instruction-card">
+            <h3>macOS (Homebrew)</h3>
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; margin-top: 12px;">
+              <table class="app-table">
+                <thead><tr><th>Package</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td class="app-name">gh</td><td>GitHub CLI</td></tr>
+                  <tr><td class="app-name">node</td><td>Node.js runtime</td></tr>
+                  <tr><td class="app-name">jq</td><td>JSON processor</td></tr>
+                  <tr><td class="app-name">swiftlint</td><td>Swift style enforcement</td></tr>
+                  <tr><td class="app-name">cocoapods</td><td>iOS dependency manager</td></tr>
+                  <tr><td class="app-name">fastlane</td><td>iOS build automation</td></tr>
+                  <tr><td class="app-name">visual-studio-code</td><td>VS Code (cask)</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.85rem;">+ tree, wget, swiftformat, xcbeautify, mas</p>
+          </div>
+
+          <div class="instruction-card">
+            <h3>Windows (Chocolatey)</h3>
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; margin-top: 12px;">
+              <table class="app-table">
+                <thead><tr><th>Package</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td class="app-name">git</td><td>Git version control</td></tr>
+                  <tr><td class="app-name">gh</td><td>GitHub CLI</td></tr>
+                  <tr><td class="app-name">nodejs-lts</td><td>Node.js LTS runtime</td></tr>
+                  <tr><td class="app-name">python3</td><td>Python 3 runtime</td></tr>
+                  <tr><td class="app-name">vscode</td><td>Visual Studio Code</td></tr>
+                  <tr><td class="app-name">powershell-core</td><td>PowerShell 7+</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.85rem;">+ jq, wget, curl, 7zip, microsoft-windows-terminal</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Customization -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="customize-callout">
+          <p><strong>Customize Your Packages</strong></p>
+          <p>Edit the package arrays in each script to match your workflow. macOS: add to <code>FORMULAE</code> or <code>CASKS</code> arrays. Windows: add to the <code>$Packages</code> array. Find package names at <a href="https://formulae.brew.sh/" target="_blank" rel="noopener noreferrer">formulae.brew.sh</a> or <a href="https://community.chocolatey.org/packages" target="_blank" rel="noopener noreferrer">community.chocolatey.org</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128260;</div>
+            <h3>Idempotent</h3>
+            <p>Safe to run repeatedly. Already-installed packages are skipped, outdated ones are upgraded, missing ones are installed.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Environment Health</h3>
+            <p>After installing, verifies that key tools are working: GitHub CLI auth, Node.js, VS Code, and more. Shows remaining manual steps.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#127891;</div>
+            <h3>Color-Coded Output</h3>
+            <p>Clear status for every package: [OK] up to date, [WARN] needs update, [FAIL] error. Plus a summary at the end.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">Requirements</h2>
+        <div class="requirements-list">
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>macOS</strong> &mdash; Apple Silicon or Intel. Admin password for Homebrew install.</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Windows 10/11</strong> &mdash; must run as Administrator (Chocolatey requires elevation).</div>
+          </div>
+          <div class="requirement-item">
+            <span class="req-icon">&#9679;</span>
+            <div><strong>Internet connection</strong> &mdash; to download packages from Homebrew/Chocolatey repositories.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p>Package Manager Setup is part of <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a> Toolbox, a collection of open-source automation tools for macOS and Windows. It solves a common problem: every time you set up a new machine or reinstall your OS, you spend hours installing developer tools one by one. This script does it all with a single command.</p>
+          <p>Review the package lists before running. Customize them to match your workflow. It's open source &mdash; fork it and make it your own.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="site-logo">Tool<span>box</span></a>
+          <p class="footer-tagline">Curated macOS and Windows automation tools by CodeCraftedApps. Open source, privacy-first.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Links</h4>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="mailto:toolbox@codecraftedapps.com">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CodeCraftedApps. All rights reserved. Not affiliated with Apple Inc. or Microsoft Corporation.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', function(e) { e.stopPropagation(); nav.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove('open'); });
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', function() { backToTop.classList.toggle('visible', window.scrollY > 300); });
+      backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+  })();
+  </script>
+
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="codecraftopensource" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting and for your support." data-color="#007AFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+</body>
+</html>

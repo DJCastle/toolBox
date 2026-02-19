@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toolbox — Curated macOS Automation Tools by CodeCraftedApps</title>
-  <meta name="description" content="A curated collection of macOS automation tools by CodeCraftedApps. Automate downloads, workflows, and system tasks with AppleScript, Automator, and Shortcuts.">
-  <meta name="keywords" content="macOS, automation, AppleScript, Automator, Shortcuts, tools, collection, CodeCraftedApps, open source">
+  <title>Toolbox — Curated macOS &amp; Windows Automation Tools by CodeCraftedApps</title>
+  <meta name="description" content="A curated collection of macOS and Windows automation tools by CodeCraftedApps. Automate downloads, dev environment setup, repo sync, and system tasks with shell scripts, PowerShell, Shortcuts, and Power Automate Desktop.">
+  <meta name="keywords" content="macOS, Windows, automation, AppleScript, Automator, Shortcuts, PowerShell, Power Automate Desktop, Homebrew, Chocolatey, tools, collection, CodeCraftedApps, open source">
   <meta name="author" content="CodeCraftedApps">
 
   <link rel="canonical" href="https://toolbox.codecraftedapps.com/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Toolbox — Curated macOS Automation Tools">
-  <meta property="og:description" content="A curated collection of macOS automation tools by CodeCraftedApps. Automate downloads, workflows, and system tasks.">
+  <meta property="og:title" content="Toolbox — Curated macOS &amp; Windows Automation Tools">
+  <meta property="og:description" content="A curated collection of macOS and Windows automation tools by CodeCraftedApps. Automate downloads, dev setup, repo sync, and system tasks.">
   <meta property="og:url" content="https://toolbox.codecraftedapps.com/">
   <meta property="og:site_name" content="Toolbox">
   <meta property="og:image" content="https://toolbox.codecraftedapps.com/favicon.png">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Toolbox — Curated macOS Automation Tools">
-  <meta name="twitter:description" content="A curated collection of macOS automation tools by CodeCraftedApps.">
+  <meta name="twitter:title" content="Toolbox — Curated macOS &amp; Windows Automation Tools">
+  <meta name="twitter:description" content="A curated collection of macOS and Windows automation tools by CodeCraftedApps.">
   <meta name="twitter:image" content="https://toolbox.codecraftedapps.com/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Toolbox",
-    "description": "A curated collection of macOS automation tools by CodeCraftedApps.",
+    "description": "A curated collection of macOS and Windows automation tools by CodeCraftedApps.",
     "url": "https://toolbox.codecraftedapps.com/",
     "author": {
       "@type": "Organization",
@@ -71,12 +71,13 @@
     <section class="hero">
       <div class="container">
         <h1><span class="gradient-text">Toolbox</span></h1>
-        <p class="tagline">Curated macOS automation tools by <a href="https://codecraftedapps.com" style="color: var(--accent);">CodeCraftedApps</a>. Download apps, automate workflows, and simplify system tasks &mdash; built with Apple's native automation technologies.</p>
-        <p class="sub-tagline">Open source. Privacy-first. Built for macOS.</p>
+        <p class="tagline">Curated macOS and Windows automation tools by <a href="https://codecraftedapps.com" style="color: var(--accent);">CodeCraftedApps</a>. Download apps, set up dev environments, sync repos, and simplify system tasks &mdash; built with native automation technologies on both platforms.</p>
+        <p class="sub-tagline">Open source. Privacy-first. Built for macOS and Windows.</p>
         <div class="hero-badges">
           <span class="hero-badge">macOS</span>
-          <span class="hero-badge">AppleScript</span>
-          <span class="hero-badge">Automator</span>
+          <span class="hero-badge">Windows</span>
+          <span class="hero-badge">Shell Script</span>
+          <span class="hero-badge">PowerShell</span>
           <span class="hero-badge">Shortcuts</span>
           <span class="hero-badge">Open Source</span>
         </div>
@@ -90,7 +91,7 @@
     <section class="section reveal">
       <div class="container">
         <h2 class="section-title">Browse Tools</h2>
-        <p class="section-subtitle">Each tool solves a specific macOS automation problem. Click to learn more.</p>
+        <p class="section-subtitle">Each tool solves a specific automation problem on macOS or Windows. Click to learn more.</p>
         <div class="tools-grid">
 
           <!-- Tool Card: Non App Store Apps Download -->
@@ -106,15 +107,47 @@
             </div>
           </a>
 
-          <!-- Placeholder: More Coming Soon -->
-          <div class="tool-card" style="opacity: 0.4; cursor: default;">
-            <div class="tool-card-icon">&#128640;</div>
-            <h3 class="tool-card-title">More Coming Soon</h3>
-            <p class="tool-card-description">New macOS automation tools are in development. Follow the GitHub repository to stay updated.</p>
+          <!-- Tool Card: Package Manager Setup -->
+          <a href="tools/packagemanagersetup.html" class="tool-card" style="text-decoration: none; color: inherit;">
+            <div class="tool-card-icon">&#128295;</div>
+            <h3 class="tool-card-title">Package Manager Setup</h3>
+            <p class="tool-card-description">Bootstrap a dev environment from scratch. Installs Homebrew (macOS) or Chocolatey (Windows), CLI tools, GUI apps, and verifies environment health. Idempotent &mdash; safe to run anytime.</p>
             <div class="tool-card-footer">
-              <span class="tool-card-tag">Coming Soon</span>
+              <span class="tool-card-tag tool-card-tag--script">Shell Script</span>
+              <span class="tool-card-tag tool-card-tag--powershell">PowerShell</span>
+              <span class="tool-card-tag tool-card-tag--shortcut">Shortcut</span>
+              <span class="tool-card-tag tool-card-tag--pad">PAD Flow</span>
+              <span class="tool-card-link">Learn more</span>
             </div>
-          </div>
+          </a>
+
+          <!-- Tool Card: Repo Sync -->
+          <a href="tools/reposync.html" class="tool-card" style="text-decoration: none; color: inherit;">
+            <div class="tool-card-icon">&#128194;</div>
+            <h3 class="tool-card-title">Repo Sync</h3>
+            <p class="tool-card-description">Clone and update all your GitHub repos into ~/Developer with an interactive menu. Filter by platform topic, pick specific repos, or sync everything at once.</p>
+            <div class="tool-card-footer">
+              <span class="tool-card-tag tool-card-tag--script">Shell Script</span>
+              <span class="tool-card-tag tool-card-tag--powershell">PowerShell</span>
+              <span class="tool-card-tag tool-card-tag--shortcut">Shortcut</span>
+              <span class="tool-card-tag tool-card-tag--pad">PAD Flow</span>
+              <span class="tool-card-link">Learn more</span>
+            </div>
+          </a>
+
+          <!-- Tool Card: App Downloader -->
+          <a href="tools/appdownloader.html" class="tool-card" style="text-decoration: none; color: inherit;">
+            <div class="tool-card-icon">&#11015;&#65039;</div>
+            <h3 class="tool-card-title">App Downloader</h3>
+            <p class="tool-card-description">Download installer files for apps not in the App Store or Microsoft Store. Tracks versions across runs to detect updates. Download only &mdash; nothing is installed.</p>
+            <div class="tool-card-footer">
+              <span class="tool-card-tag tool-card-tag--script">Shell Script</span>
+              <span class="tool-card-tag tool-card-tag--powershell">PowerShell</span>
+              <span class="tool-card-tag tool-card-tag--shortcut">Shortcut</span>
+              <span class="tool-card-tag tool-card-tag--pad">PAD Flow</span>
+              <span class="tool-card-link">Learn more</span>
+            </div>
+          </a>
 
         </div>
       </div>
@@ -124,25 +157,25 @@
     <section class="section reveal">
       <div class="container">
         <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">Every tool is open source and built with Apple's native automation stack.</p>
+        <p class="section-subtitle">Every tool is open source. Clone the repo and run the scripts &mdash; or use one-click launchers.</p>
         <div class="features-grid">
 
           <div class="feature-card">
             <div class="feature-icon">&#128269;</div>
             <h3>Browse &amp; Choose</h3>
-            <p>Find the tool you need from the collection. Each one solves a specific automation problem on macOS &mdash; from batch downloads to workflow automation.</p>
+            <p>Find the tool you need from the collection. Each one solves a specific automation problem &mdash; from dev environment setup to batch downloads and repo management.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">&#128187;</div>
-            <h3>Clone &amp; Build</h3>
-            <p>Every tool is a GitHub repository. Clone it, run the build script, and you have a native macOS app. No installers, no runtimes, no App Store required.</p>
+            <h3>Clone &amp; Run</h3>
+            <p>Every tool lives in one GitHub repository. Clone it, run the script for your platform &mdash; shell on macOS, PowerShell on Windows. No installers or runtimes required.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">&#9729;&#65039;</div>
-            <h3>Sync via iCloud</h3>
-            <p>Tools are built into your iCloud Automator folder for cross-machine sync. Set up once on one Mac, use everywhere.</p>
+            <div class="feature-icon">&#128640;</div>
+            <h3>One-Click Launchers</h3>
+            <p>Prefer not to use the terminal? Import an Apple Shortcut (macOS) or Power Automate Desktop flow (Windows) for one-click execution.</p>
           </div>
 
         </div>
@@ -152,26 +185,26 @@
     <!-- Built With -->
     <section class="section reveal">
       <div class="container">
-        <h2 class="section-title">Built With Apple's Automation Technologies</h2>
-        <p class="section-subtitle">Native macOS applications &mdash; no third-party frameworks or runtimes required.</p>
+        <h2 class="section-title">Built With Native Automation Technologies</h2>
+        <p class="section-subtitle">No third-party frameworks or runtimes required. Uses what ships with your OS.</p>
         <div class="features-grid">
 
           <div class="feature-card">
             <div class="feature-icon">&#128221;</div>
-            <h3>AppleScript</h3>
-            <p>Apple's built-in scripting language for macOS automation. Uses native dialogs, progress bars, and system integration that ship with every Mac. <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank" rel="noopener noreferrer">Apple Documentation</a></p>
+            <h3>Shell Script &amp; AppleScript</h3>
+            <p>macOS tools use Bash shell scripts and Apple's built-in <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank" rel="noopener noreferrer">AppleScript</a> for native dialogs and system integration. Package management via <a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">Homebrew</a>.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">&#9881;&#65039;</div>
-            <h3>Automator &amp; Shortcuts</h3>
-            <p>Part of Apple's automation ecosystem. Build workflows visually with <a href="https://support.apple.com/guide/automator/welcome/mac" target="_blank" rel="noopener noreferrer">Automator</a> or the Shortcuts app on macOS Monterey and later.</p>
+            <h3>PowerShell &amp; Chocolatey</h3>
+            <p>Windows tools use <a href="https://learn.microsoft.com/en-us/powershell/" target="_blank" rel="noopener noreferrer">PowerShell</a> scripts. Package management via <a href="https://chocolatey.org/" target="_blank" rel="noopener noreferrer">Chocolatey</a>. No external dependencies beyond what Windows provides.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">&#128736;&#65039;</div>
-            <h3>osacompile</h3>
-            <p>Apple's compiler that builds AppleScript into native macOS <code>.app</code> bundles. Double-click to run like any native application. <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptX/Concepts/osa.html" target="_blank" rel="noopener noreferrer">Apple Developer</a></p>
+            <div class="feature-icon">&#128640;</div>
+            <h3>Shortcuts &amp; Power Automate</h3>
+            <p>One-click launchers for both platforms. <a href="https://support.apple.com/guide/shortcuts-mac/" target="_blank" rel="noopener noreferrer">Apple Shortcuts</a> on macOS Monterey+, <a href="https://learn.microsoft.com/en-us/power-automate/desktop-flows/introduction" target="_blank" rel="noopener noreferrer">Power Automate Desktop</a> on Windows 10/11.</p>
           </div>
 
         </div>
@@ -183,8 +216,8 @@
       <div class="container">
         <h2 class="section-title">About</h2>
         <div class="about-content">
-          <p>Toolbox is maintained by <a href="https://codecraftedapps.com">CodeCraftedApps</a>, an independent developer building open-source tools for macOS. Every tool uses Apple's native automation technologies &mdash; AppleScript, Automator, and Shortcuts &mdash; to solve real problems without third-party frameworks or runtimes.</p>
-          <p>This project is not affiliated with or endorsed by Apple Inc. All Apple trademarks are the property of Apple Inc.</p>
+          <p>Toolbox is maintained by <a href="https://codecraftedapps.com">CodeCraftedApps</a>, an independent developer building open-source tools for macOS and Windows. Every tool uses native automation technologies &mdash; shell scripts, PowerShell, AppleScript, Shortcuts, and Power Automate Desktop &mdash; to solve real problems without third-party frameworks.</p>
+          <p>This project is not affiliated with or endorsed by Apple Inc. or Microsoft Corporation. All trademarks are the property of their respective owners.</p>
         </div>
       </div>
     </section>
@@ -197,7 +230,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="site-logo">Tool<span>box</span></a>
-          <p class="footer-tagline">Curated macOS automation tools by CodeCraftedApps. Open source, privacy-first.</p>
+          <p class="footer-tagline">Curated macOS and Windows automation tools by CodeCraftedApps. Open source, privacy-first.</p>
         </div>
         <div class="footer-column">
           <h4>Links</h4>

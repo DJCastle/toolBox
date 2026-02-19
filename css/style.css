@@ -966,6 +966,18 @@ body::after {
   border-color: rgba(0, 122, 255, 0.2);
 }
 
+.tool-card-tag--powershell {
+  background: rgba(0, 120, 212, 0.1);
+  color: #0078D4;
+  border-color: rgba(0, 120, 212, 0.2);
+}
+
+.tool-card-tag--pad {
+  background: rgba(210, 105, 30, 0.1);
+  color: #D2691E;
+  border-color: rgba(210, 105, 30, 0.2);
+}
+
 .tool-card-link {
   font-size: 0.85rem;
   font-weight: 600;
