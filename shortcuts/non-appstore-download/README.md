@@ -1,6 +1,17 @@
 # Non App Store Apps Download — Apple Shortcut
 
-Apple Shortcuts version that batch downloads non-App Store apps. Import and run with one click.
+Apple Shortcuts version that batch downloads non-App Store apps. Import and run with one click. This shortcut is self-contained — the download script is embedded inside the shortcut itself.
+
+---
+
+## Security
+
+This shortcut runs a shell script. Before using it:
+
+1. Open **Shortcuts.app** > **Settings** > **Advanced**
+2. Enable **Allow Running Scripts**
+3. Run the shortcut
+4. **Disable "Allow Running Scripts" when done** — best practice to keep this off when not in use
 
 ---
 
@@ -38,10 +49,25 @@ Nothing is installed or opened — files are saved to your Desktop.
 
 ## Editing the App List
 
+The script is embedded inside the shortcut. To edit it:
+
 1. Open **Shortcuts.app**
 2. Right-click the shortcut > **Edit**
 3. Find the **Run Shell Script** action
 4. Edit the `APPS=()` array to add or remove cask names
+
+```bash
+# Example: add Firefox and Discord
+APPS=(
+  "google-chrome"
+  "brave-browser"
+  "visual-studio-code"
+  "slack"
+  "iterm2"
+  "firefox"        # <-- add new apps here
+  "discord"
+)
+```
 
 Find cask names at [formulae.brew.sh/cask](https://formulae.brew.sh/cask/).
 

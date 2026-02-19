@@ -1,13 +1,13 @@
 # Non App Store Apps Download — Shell Script
 
-Standalone command-line tool that batch downloads non-App Store apps to your Desktop. One command, no GUI required.
+Standalone command-line tool that batch downloads non-App Store apps to your Desktop. One command, no GUI required. Resolves the latest stable release of each app via the [Homebrew Cask API](https://formulae.brew.sh/cask/).
 
 ---
 
 ## Usage
 
 ```bash
-./download-apps.sh
+bash download-apps.sh
 ```
 
 Downloads all apps to `~/Desktop` with color-coded status:
@@ -20,7 +20,11 @@ Downloads all apps to `~/Desktop` with color-coded status:
 
 ## How It Works
 
-Resolves each app's latest stable release via the [Homebrew Cask API](https://formulae.brew.sh/cask/) and downloads with `curl`. No Homebrew installation required.
+1. For each app, queries the Homebrew Cask API (`https://formulae.brew.sh/api/cask/<name>.json`) to resolve the latest official download URL
+2. Downloads each file to `~/Desktop` with `curl`
+3. Shows color-coded status for each app
+
+No Homebrew installation required — only uses the public API for URL resolution.
 
 ---
 
@@ -34,7 +38,21 @@ Resolves each app's latest stable release via the [Homebrew Cask API](https://fo
 | Slack | `slack` |
 | iTerm2 | `iterm2` |
 
-To change the list, edit the `brew_download` calls at the bottom of the script.
+---
+
+## Customization
+
+To add or remove apps, edit the `brew_download` calls at the bottom of `download-apps.sh`:
+
+```bash
+# Add a new app — use the Homebrew cask name
+brew_download "App Display Name" "cask-name"
+
+# Example: add Firefox
+brew_download "Firefox" "firefox"
+```
+
+Find cask names at [formulae.brew.sh/cask](https://formulae.brew.sh/cask/).
 
 ---
 
@@ -48,5 +66,6 @@ To change the list, edit the `brew_download` calls at the bottom of the script.
 
 ## See Also
 
+- [App Downloader](../app-downloader/) — newer version with `--check` mode, version tracking, and Windows support
 - [AppleScript App](../../automator/non-appstore-download/) — full GUI with app search and management
 - [Apple Shortcut](../../shortcuts/non-appstore-download/) — run from Shortcuts.app

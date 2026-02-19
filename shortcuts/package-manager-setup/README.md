@@ -1,6 +1,6 @@
 # Package Manager Setup — Apple Shortcut
 
-Apple Shortcuts version that sets up your macOS dev environment with Homebrew. Import and run with one click.
+Apple Shortcuts version that sets up your macOS dev environment with Homebrew. Import and run with one click — the shortcut launches Terminal and runs the shell script from this repo.
 
 ---
 
@@ -29,7 +29,36 @@ Double-click **Dev-Brew-Setup.shortcut** to import into Shortcuts.app, or:
 
 1. Checks if `~/Developer/toolBox` exists — clones the repo if not
 2. Opens **Terminal.app**
-3. Runs `brew-setup.sh` which installs Homebrew, CLI tools, GUI apps, and checks environment health
+3. Runs [`brew-setup.sh`](../../scripts/package-manager-setup/brew-setup.sh) which:
+   - Installs Xcode Command Line Tools (if missing)
+   - Installs or updates Homebrew
+   - Installs/upgrades CLI tools and GUI apps
+   - Runs brew cleanup to free disk space
+   - Checks environment health (gh auth, node, VSCode, Xcode)
+   - Prints a summary with remaining manual steps
+
+---
+
+## Default Packages
+
+The script installs these packages by default:
+
+| Type | Packages |
+| ---- | -------- |
+| Formulae | gh, swiftlint, xcbeautify, node, jq, tree, wget, cocoapods, fastlane, swiftformat, mas |
+| Casks | visual-studio-code |
+
+---
+
+## Customization
+
+This shortcut runs the script from the repo, so to change the package list:
+
+1. Open `scripts/package-manager-setup/brew-setup.sh` in a text editor
+2. Edit the `FORMULAE` array (~line 131) for CLI tools
+3. Edit the `CASKS` array (~line 200) for GUI apps
+
+Format: `"package-name|description"`
 
 ---
 
@@ -43,5 +72,5 @@ Double-click **Dev-Brew-Setup.shortcut** to import into Shortcuts.app, or:
 
 ## See Also
 
-- [Shell Script](../../scripts/package-manager-setup/) — run directly from Terminal
+- [Shell Script](../../scripts/package-manager-setup/) — run directly from Terminal (also has `--check` mode)
 - [PAD Flow](../../pad-flows/package-manager-setup/) — Windows equivalent via Power Automate Desktop

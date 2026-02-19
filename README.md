@@ -34,6 +34,24 @@ Automator apps, shell scripts, PowerShell scripts, Apple Shortcuts, and Power Au
 
 ---
 
+## Getting Started
+
+**Fresh macOS setup:**
+
+1. Run [Package Manager Setup](scripts/package-manager-setup/) — installs Homebrew + dev tools (gh, node, jq, etc.)
+2. Run [Repo Sync](scripts/repo-sync/) — clones all your GitHub repos into `~/Developer`
+3. Run [App Downloader](scripts/app-downloader/) — downloads app installers (Chrome, VS Code, Slack, etc.)
+
+**Fresh Windows setup:**
+
+1. Run [Package Manager Setup](scripts/package-manager-setup/) — installs Chocolatey + dev tools
+2. Run [Repo Sync](scripts/repo-sync/) — clones all your GitHub repos into `~\Developer`
+3. Run [App Downloader](scripts/app-downloader/) — downloads app installers
+
+Each tool can be run as a **shell script** (Terminal / PowerShell), an **Apple Shortcut**, or a **PAD Flow**. Pick whichever is most convenient for you. All scripts support a `--check` / `-Check` flag that shows what would happen without making any changes.
+
+---
+
 ## How This Repo Is Organized
 
 ```text
