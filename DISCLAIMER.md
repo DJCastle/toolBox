@@ -9,12 +9,15 @@
 This collection contains tools with different levels of system interaction:
 
 ### Download-Only Tools
+
 **Non App Store Apps Download** and **App Downloader** are download utilities. They download installer files to your Desktop or Downloads folder. They do **not install, open, modify, or execute** any software. What you do with the downloaded files is entirely your responsibility.
 
 ### Package Manager Tools
+
 **Package Manager Setup** installs and configures package managers ([Homebrew](https://brew.sh/) on macOS, [Chocolatey](https://chocolatey.org/) on Windows) and uses them to install developer tools and applications. **Review the package list in each script before running.** The Windows script requires administrator privileges.
 
 ### Repo Sync Tools
+
 **Repo Sync** clones and updates GitHub repositories into your `~/Developer` folder using standard Git operations (`git clone`, `git pull`). It reads your GitHub account's repo list via the GitHub CLI but does not modify any repository content.
 
 ## Use With Care
@@ -25,6 +28,8 @@ These tools automate common developer setup tasks. Please use them responsibly:
 - **Customize package lists.** The default package lists are starting points — edit them to match your needs.
 - **Only download software you recognize and trust.** Do not add unfamiliar apps without researching them first.
 - **Review downloaded files before installing.** Verify the developer and application before opening any installer.
+
+> **Note:** These tools are shared for educational purposes — review and understand each script before running it.
 
 ## Third-Party Software
 
@@ -72,11 +77,13 @@ By using these tools, you acknowledge that:
 ## System Permissions
 
 ### macOS
+
 - **Apple Shortcuts** require enabling "Allow Running Scripts" in Shortcuts > Settings > Advanced. Disable this after use for security.
 - **Homebrew** requires admin password on first install.
 - macOS Gatekeeper verifies code signatures before apps can run. Keep Gatekeeper enabled.
 
 ### Windows
+
 - **Chocolatey** requires administrator privileges (UAC prompt).
 - **Power Automate Desktop** flows run PowerShell scripts. Review `.pad` files before importing.
 - PowerShell execution policy may need to be set to allow script execution.

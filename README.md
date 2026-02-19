@@ -9,6 +9,7 @@ Automator apps, shell scripts, PowerShell scripts, Apple Shortcuts, and Power Au
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-native-green)](https://support.apple.com/en-us/116943)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Website](https://img.shields.io/badge/Website-toolbox.codecraftedapps.com-007AFF)](https://toolbox.codecraftedapps.com)
+[![Lint](https://github.com/DJCastle/toolBox/actions/workflows/lint.yml/badge.svg)](https://github.com/DJCastle/toolBox/actions/workflows/lint.yml)
 
 ---
 
@@ -87,6 +88,8 @@ Each tool can be run as a **shell script** (Terminal / PowerShell), an **Apple S
 ## Security
 
 Tools in this collection serve different purposes — please understand what each one does before running it:
+
+> **Note:** These tools are shared for educational purposes — review and understand each script before running it.
 
 - **Download-only tools** (Non App Store Apps Download, App Downloader) download installer files but do **not** install, modify, or execute anything. Downloads resolve to official vendor URLs via [Homebrew Cask](https://formulae.brew.sh/cask/) or trusted vendor sites.
 - **Package manager tools** (Package Manager Setup) install software packages via [Homebrew](https://brew.sh/) or [Chocolatey](https://chocolatey.org/). Review the package lists in the scripts before running.

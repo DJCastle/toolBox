@@ -64,6 +64,20 @@ Find cask names at [formulae.brew.sh/cask](https://formulae.brew.sh/cask/).
 
 ---
 
+## Verifying Downloads
+
+After downloading, verify each installer's code signature before running it:
+
+```bash
+# Check if the app is signed by an identified developer
+spctl --assess --verbose /path/to/App.app
+
+# Show detailed signature info
+codesign --verify --deep --verbose /path/to/App.app
+```
+
+---
+
 ## See Also
 
 - [App Downloader](../app-downloader/) — newer version with `--check` mode, version tracking, and Windows support

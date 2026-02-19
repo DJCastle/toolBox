@@ -59,6 +59,17 @@ Browse cask names at [formulae.brew.sh/cask](https://formulae.brew.sh/cask/).
 3. **Nothing is installed or opened** — files sit on your Desktop
 4. macOS Gatekeeper verifies code signatures before apps can run
 
+### Verifying Downloads
+
+You can manually verify code signatures before installing:
+
+```bash
+spctl --assess --verbose /path/to/App.app
+codesign --verify --deep --verbose /path/to/App.app
+```
+
+macOS Gatekeeper performs this check automatically when you open an app, but manual verification lets you confirm before installation.
+
 ### Persistence
 
 Apps you add are **saved permanently** inside the app bundle. Your list persists across sessions.

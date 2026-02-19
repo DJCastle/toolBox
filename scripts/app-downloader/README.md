@@ -57,13 +57,39 @@ When an update is detected, you'll see: `Update available: v1.2 → v1.3`
 ## Requirements
 
 **macOS:**
+
 - Homebrew (for URL resolution only)
 - jq — installed by brew-setup.sh
 - Internet connection
 
 **Windows:**
+
 - Internet connection
 - Chocolatey (optional, for checking if already installed)
+
+---
+
+## Verifying Downloads
+
+After downloading, we recommend verifying the code signature of each installer before running it:
+
+**macOS:**
+
+```bash
+# Check if the app is signed by an identified developer
+spctl --assess --verbose /path/to/App.app
+
+# Show detailed signature info
+codesign --verify --deep --verbose /path/to/App.app
+```
+
+**Windows:**
+
+Right-click the installer > **Properties** > **Digital Signatures** tab, or use PowerShell:
+
+```powershell
+Get-AuthenticodeSignature .\Setup.exe
+```
 
 ---
 
