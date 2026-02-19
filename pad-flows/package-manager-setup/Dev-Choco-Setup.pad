@@ -1,0 +1,20 @@
+Scripting.RunPowershellScript Script: $'''
+$ScriptDir = Join-Path $env:USERPROFILE "Developer\\toolBox"
+$Script = Join-Path $ScriptDir "scripts\\package-manager-setup\\choco-setup.ps1"
+
+# Clone the repo if it doesn't exist yet
+if (-not (Test-Path $Script)) {
+    New-Item -ItemType Directory -Force -Path (Join-Path $env:USERPROFILE "Developer") | Out-Null
+    git clone https://github.com/DJCastle/toolBox.git $ScriptDir 2>$null
+}
+
+if (Test-Path $Script) {
+    # Open an elevated PowerShell window and run the script
+    # -Verb RunAs triggers the UAC prompt (choco-setup requires Administrator)
+    # -NoExit keeps the window open so you can see the results
+    Start-Process powershell -Verb RunAs -ArgumentList "-NoExit", "-ExecutionPolicy", "Bypass", "-File", "`"$Script`""
+} else {
+    # Repo couldn't be cloned — show instructions
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'toolBox repo not found. Run:' -ForegroundColor Red; Write-Host 'git clone https://github.com/DJCastle/toolBox.git $env:USERPROFILE\\Developer\\toolBox' -ForegroundColor Yellow"
+}
+''' ScriptOutput=> PowershellOutput ScriptError=> PowershellError

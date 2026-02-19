@@ -1,0 +1,19 @@
+Scripting.RunPowershellScript Script: $'''
+$ScriptDir = Join-Path $env:USERPROFILE "Developer\\toolBox"
+$Script = Join-Path $ScriptDir "scripts\\repo-sync\\clone-repos.ps1"
+
+# Clone the repo if it doesn't exist yet
+if (-not (Test-Path $Script)) {
+    New-Item -ItemType Directory -Force -Path (Join-Path $env:USERPROFILE "Developer") | Out-Null
+    git clone https://github.com/DJCastle/toolBox.git $ScriptDir 2>$null
+}
+
+if (Test-Path $Script) {
+    # Open a PowerShell window and run the script
+    # -NoExit keeps the window open for the interactive menu
+    Start-Process powershell -ArgumentList "-NoExit", "-ExecutionPolicy", "Bypass", "-File", "`"$Script`""
+} else {
+    # Repo couldn't be cloned — show instructions
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'toolBox repo not found. Run:' -ForegroundColor Red; Write-Host 'git clone https://github.com/DJCastle/toolBox.git $env:USERPROFILE\\Developer\\toolBox' -ForegroundColor Yellow"
+}
+''' ScriptOutput=> PowershellOutput ScriptError=> PowershellError
