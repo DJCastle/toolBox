@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &mdash; Toolbox</title>
+  <meta name="description" content="About Toolbox, a curated collection of open-source macOS and Windows automation tools built and maintained by CodeCraftedApps. Learn about the project, design principles, and how to contribute.">
+  <meta name="keywords" content="about, Toolbox, CodeCraftedApps, open source, macOS automation, Windows automation, shell scripts, PowerShell, Apple Shortcuts, Power Automate Desktop">
+  <meta name="author" content="CodeCraftedApps">
+
+  <link rel="canonical" href="https://toolbox.codecraftedapps.com/about.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About &mdash; Toolbox">
+  <meta property="og:description" content="About Toolbox, a curated collection of open-source macOS and Windows automation tools by CodeCraftedApps.">
+  <meta property="og:url" content="https://toolbox.codecraftedapps.com/about.html">
+  <meta property="og:site_name" content="Toolbox">
+  <meta property="og:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About &mdash; Toolbox">
+  <meta name="twitter:description" content="About Toolbox, a curated collection of open-source macOS and Windows automation tools by CodeCraftedApps.">
+  <meta name="twitter:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Tool<span>box</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html" class="active">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="separator">/</span>About
+    </nav>
+
+    <div class="page-header">
+      <div class="container">
+        <h1>About Toolbox</h1>
+        <p>The story behind the project, what it includes, and the principles that guide it.</p>
+      </div>
+    </div>
+
+    <!-- About This Project -->
+    <section class="content-section reveal">
+      <div class="container">
+        <div class="content-body">
+
+          <h2>About This Project</h2>
+          <p>Toolbox is a curated collection of open-source automation tools for macOS and Windows, built and maintained by <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>. The project was born out of a simple frustration: setting up a new computer or rebuilding an existing one takes far too long. Installing a package manager, configuring developer tools, cloning repositories, downloading apps &mdash; each task is straightforward on its own, but doing them all by hand is tedious and error-prone. Toolbox automates those tasks so you can get back to the work that actually matters.</p>
+
+          <p>The philosophy behind Toolbox is intentionally opinionated. Every tool in the collection uses <strong>native automation technologies</strong> that ship with macOS and Windows &mdash; shell scripts (Bash and Zsh), PowerShell, AppleScript, Apple Shortcuts, and Power Automate Desktop. There are no third-party frameworks, no runtimes to install, and no dependencies beyond what your operating system already provides. If you can open a terminal or run a shortcut, you can use any tool in the collection without installing anything extra first.</p>
+
+          <p>Every tool in Toolbox exists because it solves a real automation problem that developers and power users encounter regularly. Nothing is included for the sake of padding out the collection. If a script does not save meaningful time or reduce meaningful complexity, it does not belong here. That standard keeps the project focused and ensures that every tool earns its place.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- The Tools -->
+    <section class="content-section reveal">
+      <div class="container">
+        <div class="content-body">
+
+          <h2>The Tools</h2>
+          <p>Toolbox currently includes four automation tools, each designed to handle a specific part of the setup and maintenance workflow on macOS and Windows.</p>
+
+          <h3>Non App Store Apps Download</h3>
+          <p><strong>Platform:</strong> macOS only</p>
+          <p>A standalone AppleScript application with a full graphical interface for searching, managing, and batch-downloading macOS applications from their official sources. It uses the Homebrew Cask API to resolve the latest stable download URLs, then downloads installer files directly from vendor servers. You can build a custom list of apps, save it for future use, and download everything in one batch &mdash; no package manager installation required. This tool is ideal for users who want the convenience of batch downloading without adopting Homebrew for day-to-day use.</p>
+
+          <h3>Package Manager Setup</h3>
+          <p><strong>Platforms:</strong> macOS and Windows</p>
+          <p>A bootstrap script that installs and configures a package manager &mdash; <a href="https://brew.sh" target="_blank" rel="noopener noreferrer">Homebrew</a> on macOS or <a href="https://chocolatey.org" target="_blank" rel="noopener noreferrer">Chocolatey</a> on Windows &mdash; and then installs a curated list of developer tools and applications on top of it. Running the script on a fresh system takes your machine from empty to fully configured in minutes. Running it again on an existing system checks for updates and installs anything missing, making it safe to re-run at any time.</p>
+
+          <h3>Repo Sync</h3>
+          <p><strong>Platforms:</strong> macOS and Windows</p>
+          <p>A script that clones all of your GitHub repositories to a local directory and keeps them up to date on subsequent runs. It uses the GitHub CLI to fetch your repository list, then presents an interactive filter so you can choose which repositories to sync. Repositories that already exist locally are updated with a pull; new ones are cloned fresh. This is especially useful when setting up a new machine or when you want to ensure all of your projects are current.</p>
+
+          <h3>App Downloader</h3>
+          <p><strong>Platforms:</strong> macOS and Windows</p>
+          <p>A script that downloads installer files for a configurable list of applications, with built-in version tracking. On macOS, it resolves download URLs through the Homebrew Cask API. On Windows, it uses Chocolatey and GitHub Releases. Downloaded files are saved to your Downloads folder with version metadata, so subsequent runs can detect when a newer version is available and download only what has changed.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Principles -->
+    <section class="content-section reveal">
+      <div class="container">
+        <div class="content-body">
+
+          <h2>Design Principles</h2>
+          <p>Every decision in Toolbox is guided by a consistent set of principles. These are not aspirational goals &mdash; they are enforced in every tool, every script, and every release.</p>
+
+          <h3>Open Source (MIT License)</h3>
+          <p>All code is released under the <a href="https://github.com/DJCastle/toolBox/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>, one of the most permissive open-source licenses available. You are free to use, modify, and redistribute the code for any purpose, including commercial use. The full source code is publicly available on <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a> for inspection before you run anything.</p>
+
+          <h3>Privacy-First</h3>
+          <p>Toolbox does not collect telemetry, analytics, or usage statistics of any kind. There are no tracking pixels, no crash reporters, and no phone-home mechanisms. The tools run entirely on your local machine, and the only network requests they make are the ones necessary to download the software you asked for &mdash; directly from vendor servers, never through a proxy or intermediary controlled by us.</p>
+
+          <h3>Cross-Platform Where Possible</h3>
+          <p>Three of the four tools support both macOS and Windows. Each platform gets a native implementation &mdash; Bash scripts for macOS, PowerShell scripts for Windows &mdash; rather than a cross-platform wrapper that compromises on both. Apple Shortcuts are provided as an alternative to Terminal on macOS, and Power Automate Desktop flows are provided as an alternative to PowerShell on Windows.</p>
+
+          <h3>Idempotent and Safe to Re-Run</h3>
+          <p>Every script is designed to be idempotent: you can run it once, or you can run it a hundred times, and the end result will be the same. If something is already installed, it gets skipped. If something needs an update, it gets updated. If something is missing, it gets installed. This means you never have to worry about running a script twice by accident or wonder whether it is safe to re-run after an interruption.</p>
+
+          <h3>Educational and Well-Documented</h3>
+          <p>The scripts are written to be read, not just executed. Every significant block of logic is commented to explain what it does and why. The goal is that any developer &mdash; regardless of experience level &mdash; can open a script, understand it, and learn from it. Toolbox is as much a learning resource as it is a productivity tool.</p>
+
+          <h3>Native Technologies Only</h3>
+          <p>Toolbox deliberately avoids third-party frameworks and runtimes. The macOS tools use Bash, Zsh, and AppleScript &mdash; technologies that have shipped with every Mac for decades. The Windows tools use PowerShell, which is built into Windows 10 and 11. This means zero setup overhead: if you have the operating system, you have everything you need to run the tools.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contributing -->
+    <section class="content-section reveal">
+      <div class="container">
+        <div class="content-body">
+
+          <h2>Contributing</h2>
+          <p>Toolbox is an open-source project and contributions are welcome. Whether you want to fix a bug, improve documentation, add support for a new platform, or propose an entirely new tool, the project is open to pull requests and issues on GitHub.</p>
+
+          <p>To get started, visit the <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">Toolbox repository on GitHub</a>. You can browse open issues to find something to work on, or open a new issue to suggest a feature or report a problem. If you would like to submit code, fork the repository, make your changes on a new branch, and open a pull request with a clear description of what your change does and why.</p>
+
+          <p>All contributions are reviewed before merging. The project values clear, well-commented code that follows the existing patterns and design principles described above. If you are unsure whether an idea fits the project, feel free to open an issue first to discuss it.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About CodeCraftedApps -->
+    <section class="content-section reveal">
+      <div class="container">
+        <div class="content-body">
+
+          <h2>About CodeCraftedApps</h2>
+          <p><a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a> is an independent developer building apps, tools, and open-source projects for macOS, iOS, and Windows. Toolbox is one of several projects under the CodeCraftedApps umbrella, each focused on solving practical problems for developers and power users with clean, well-crafted software.</p>
+
+          <p>If you have questions, feedback, or just want to say hello, you can reach us at <a href="mailto:support@codecraftedapps.com">support@codecraftedapps.com</a> or through the <a href="https://codecraftedapps.com/contact.html" target="_blank" rel="noopener noreferrer">CodeCraftedApps contact page</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">Tool<span>box</span></a>
+          <p class="footer-tagline">Curated macOS and Windows automation tools by CodeCraftedApps. Open source, privacy-first.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <a href="getting-started.html">Getting Started</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-column">
+          <h4>Project</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CodeCraftedApps. All rights reserved. Not affiliated with Apple Inc. or Microsoft Corporation.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+
+    // Scroll reveal
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
+
+    // Back to top
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+  </script>
+
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="codecraftopensource" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting and for your support." data-color="#007AFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+</body>
+</html>

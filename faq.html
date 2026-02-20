@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ &mdash; Toolbox</title>
+  <meta name="description" content="Frequently asked questions about Toolbox, a collection of open-source macOS and Windows automation tools by CodeCraftedApps. Learn about setup, usage, troubleshooting, and more.">
+  <meta name="keywords" content="FAQ, frequently asked questions, Toolbox, macOS, Windows, automation, troubleshooting, setup, CodeCraftedApps, open source">
+  <meta name="author" content="CodeCraftedApps">
+
+  <link rel="canonical" href="https://toolbox.codecraftedapps.com/faq.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FAQ &mdash; Toolbox">
+  <meta property="og:description" content="Frequently asked questions about Toolbox, a collection of open-source macOS and Windows automation tools.">
+  <meta property="og:url" content="https://toolbox.codecraftedapps.com/faq.html">
+  <meta property="og:site_name" content="Toolbox">
+  <meta property="og:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FAQ &mdash; Toolbox">
+  <meta name="twitter:description" content="Frequently asked questions about Toolbox, a collection of open-source macOS and Windows automation tools.">
+  <meta name="twitter:image" content="https://toolbox.codecraftedapps.com/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Toolbox FAQ",
+    "description": "Frequently asked questions about Toolbox, a collection of open-source macOS and Windows automation tools by CodeCraftedApps.",
+    "url": "https://toolbox.codecraftedapps.com/faq.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Toolbox?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Toolbox is a collection of open-source automation tools for macOS and Windows, built by CodeCraftedApps. It includes four tools: Non App Store Apps Download, Package Manager Setup, Repo Sync, and App Downloader. Each tool automates a common setup or maintenance task using native technologies like shell scripts, PowerShell, Apple Shortcuts, and Power Automate Desktop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Toolbox free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every tool in the collection is completely free and open source under the MIT License. You can use, modify, and distribute the code without restriction. The full source is available on GitHub."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need programming experience to use Toolbox?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Each tool comes with step-by-step instructions written in plain language. The Getting Started guide walks you through everything from opening Terminal or PowerShell to running your first script. You don't need to write or understand code to use these tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Toolbox work on both macOS and Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Package Manager Setup, Repo Sync, and App Downloader all support both macOS and Windows. Non App Store Apps Download is macOS only because it uses AppleScript and a native macOS app interface. Each tool page lists supported platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install anything before using Toolbox?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need Git to clone the repository. On macOS, run xcode-select --install to get Git via Command Line Developer Tools. On Windows, install Git via winget or from git-scm.com. After that, each tool may have platform-specific requirements (like Homebrew or Chocolatey), but the scripts install those automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Package Manager Setup and App Downloader?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Package Manager Setup installs apps directly through a package manager (Homebrew on macOS, Chocolatey on Windows). The apps are fully installed and ready to use when the script finishes. App Downloader only downloads installer files (like .dmg or .exe) to your Downloads folder without installing them. Use Package Manager Setup for developer tools and CLI utilities. Use App Downloader for apps that aren't available through a package manager or when you prefer to install manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize which packages or apps are installed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each script contains an array at the top of the file that lists the packages or apps it will process. Open the script in any text editor, add or remove entries from the array, save, and run. The scripts include comments explaining the format."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Apple Shortcuts and Power Automate Desktop flows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They are one-click launchers that run the scripts without opening Terminal or PowerShell yourself. Apple Shortcuts (macOS Monterey and later) and Power Automate Desktop (Windows 10/11) provide a visual, click-to-run interface. Each tool includes pre-built launcher files you can import."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to run these scripts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All scripts are open source, so you can review every line of code before running them. They only install well-known, official packages and download from official sources. Every script supports a --check (macOS) or -Check (Windows) mode that shows what would happen without making any changes. We recommend reviewing the script source on GitHub before your first run."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does 'idempotent' mean in the context of these tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Idempotent means a script is safe to run multiple times without causing problems. If a package is already installed and up to date, the script skips it. If a repo has already been cloned, it pulls the latest changes instead of cloning again. You can run any script as often as you like and it will only make the changes that are actually needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I get a 'permission denied' error on macOS. How do I fix it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This usually means the script file doesn't have execute permission. You can fix it by running: chmod +x ~/Developer/toolBox/scripts/<script-name>.sh and then running the script again. Alternatively, run it with the bash prefix: bash ~/Developer/toolBox/scripts/<script-name>.sh which doesn't require execute permission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "PowerShell says 'execution policy' won't allow scripts. What do I do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windows restricts script execution by default for security. Run this command in an Administrator PowerShell session before running the script: Set-ExecutionPolicy Bypass -Scope Process -Force. This allows scripts to run in the current session only. It resets when you close PowerShell, so your system policy stays unchanged."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "GitHub CLI says 'not authenticated.' How do I fix it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Repo Sync requires the GitHub CLI (gh) to be authenticated with your GitHub account. Run gh auth login and follow the prompts to sign in via your browser. Once authenticated, the script can access your repositories. You only need to do this once per machine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I report a bug or request a feature?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open an issue on the GitHub repository at https://github.com/DJCastle/toolBox/issues. Include a description of the problem, your operating system, and any error messages you see. You can also reach us via the contact page or email support@codecraftedapps.com."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Tool<span>box</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="separator">/</span>FAQ
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Common questions about Toolbox, its tools, and how to get started. Can't find your answer? <a href="https://github.com/DJCastle/toolBox/issues" target="_blank" rel="noopener noreferrer">Open an issue on GitHub</a> or <a href="mailto:support@codecraftedapps.com">contact us</a>.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="content-section reveal">
+      <div class="container">
+        <div class="content-body">
+
+          <!-- General -->
+          <h3 class="faq-category">General</h3>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is Toolbox?</summary>
+            <div class="faq-answer">
+              <p>Toolbox is a collection of open-source automation tools for macOS and Windows, built by <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>. It includes four tools:</p>
+              <ul>
+                <li><strong><a href="tools/nonappstoreapps.html">Non App Store Apps Download</a></strong> &mdash; a native macOS app for batch downloading apps from official sources.</li>
+                <li><strong><a href="tools/packagemanagersetup.html">Package Manager Setup</a></strong> &mdash; bootstraps a full dev environment with Homebrew or Chocolatey.</li>
+                <li><strong><a href="tools/reposync.html">Repo Sync</a></strong> &mdash; clones and updates all your GitHub repos at once.</li>
+                <li><strong><a href="tools/appdownloader.html">App Downloader</a></strong> &mdash; downloads installer files for apps not available through a package manager.</li>
+              </ul>
+              <p>Each tool automates a common setup or maintenance task using native technologies like shell scripts, PowerShell, Apple Shortcuts, and Power Automate Desktop.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is Toolbox free?</summary>
+            <div class="faq-answer">
+              <p>Yes. Every tool in the collection is completely free and open source under the <strong>MIT License</strong>. You can use, modify, and distribute the code without restriction. The full source is available on <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Do I need programming experience to use these tools?</summary>
+            <div class="faq-answer">
+              <p>No. Each tool comes with step-by-step instructions written in plain language. The <a href="getting-started.html">Getting Started guide</a> walks you through everything from opening Terminal or PowerShell to running your first script. You don't need to write or understand code to use these tools.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Does Toolbox work on both macOS and Windows?</summary>
+            <div class="faq-answer">
+              <p>Yes. <strong>Package Manager Setup</strong>, <strong>Repo Sync</strong>, and <strong>App Downloader</strong> all support both macOS and Windows. <strong>Non App Store Apps Download</strong> is macOS only because it uses AppleScript and a native macOS app interface. Each tool page lists its supported platforms.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Do I need to install anything before using Toolbox?</summary>
+            <div class="faq-answer">
+              <p>You need <strong>Git</strong> to clone the repository to your machine.</p>
+              <ul>
+                <li><strong>macOS:</strong> Run <code>xcode-select --install</code> in Terminal to get Git via Command Line Developer Tools.</li>
+                <li><strong>Windows:</strong> Install Git via <code>winget install --id Git.Git -e</code> or download it from <a href="https://git-scm.com/download/win" target="_blank" rel="noopener noreferrer">git-scm.com</a>.</li>
+              </ul>
+              <p>After that, each tool may have platform-specific dependencies (like Homebrew or Chocolatey), but the scripts install those automatically when needed. See the <a href="getting-started.html">Getting Started guide</a> for full details.</p>
+            </div>
+          </details>
+
+          <!-- Tools & Usage -->
+          <h3 class="faq-category">Tools &amp; Usage</h3>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the difference between Package Manager Setup and App Downloader?</summary>
+            <div class="faq-answer">
+              <p><strong><a href="tools/packagemanagersetup.html">Package Manager Setup</a></strong> installs apps directly through a package manager (Homebrew on macOS, Chocolatey on Windows). The apps are fully installed and ready to use when the script finishes.</p>
+              <p><strong><a href="tools/appdownloader.html">App Downloader</a></strong> only downloads installer files (like <code>.dmg</code> or <code>.exe</code>) to your Downloads folder &mdash; it does not install them. It also tracks version numbers across runs so you know when updates are available.</p>
+              <p>Use Package Manager Setup for developer tools and CLI utilities. Use App Downloader for apps that aren't available through a package manager or when you prefer to review and install manually.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I customize which packages or apps are installed?</summary>
+            <div class="faq-answer">
+              <p>Yes. Each script contains an array at the top of the file that lists the packages or apps it will process. Open the script in any text editor, add or remove entries from the array, save, and run. The scripts include comments explaining the expected format for each entry.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What are Apple Shortcuts and Power Automate Desktop flows?</summary>
+            <div class="faq-answer">
+              <p>They are <strong>one-click launchers</strong> that run the scripts without you needing to open Terminal or PowerShell yourself.</p>
+              <ul>
+                <li><strong>Apple Shortcuts</strong> (macOS Monterey and later) &mdash; a built-in macOS app for creating and running automations. Double-click a <code>.shortcut</code> file to import it, then run it from the Shortcuts app.</li>
+                <li><strong>Power Automate Desktop</strong> (Windows 10/11) &mdash; a free Microsoft app for desktop automation. Copy the contents of a <code>.pad</code> file into a new flow, then click Run.</li>
+              </ul>
+              <p>Package Manager Setup, Repo Sync, and App Downloader all include pre-built launcher files for both platforms.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is it safe to run these scripts?</summary>
+            <div class="faq-answer">
+              <p>Yes. All scripts are <strong>open source</strong>, so you can review every line of code before running them. They only install well-known, official packages and download from official sources.</p>
+              <p>Every script supports a check mode that shows what would happen without making any changes:</p>
+              <ul>
+                <li><strong>macOS:</strong> Add <code>--check</code> to any script command.</li>
+                <li><strong>Windows:</strong> Add <code>-Check</code> to any script command.</li>
+              </ul>
+              <p>We recommend reviewing the <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">script source on GitHub</a> before your first run.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What does &ldquo;idempotent&rdquo; mean in the context of these tools?</summary>
+            <div class="faq-answer">
+              <p>Idempotent means a script is <strong>safe to run multiple times</strong> without causing problems. If a package is already installed and up to date, the script skips it. If a repo has already been cloned, it pulls the latest changes instead of cloning again. You can run any script as often as you like and it will only make the changes that are actually needed.</p>
+            </div>
+          </details>
+
+          <!-- Troubleshooting -->
+          <h3 class="faq-category">Troubleshooting</h3>
+
+          <details class="faq-item">
+            <summary class="faq-question">I get a &ldquo;permission denied&rdquo; error on macOS. How do I fix it?</summary>
+            <div class="faq-answer">
+              <p>This usually means the script file doesn't have execute permission. You can fix it two ways:</p>
+              <p><strong>Option A:</strong> Grant execute permission, then run the script:</p>
+              <div class="code-block">
+                <span class="command">chmod +x ~/Developer/toolBox/scripts/&lt;script-name&gt;.sh</span><br>
+                <span class="command">~/Developer/toolBox/scripts/&lt;script-name&gt;.sh</span>
+              </div>
+              <p><strong>Option B:</strong> Run it with the <code>bash</code> prefix (no execute permission needed):</p>
+              <div class="code-block">
+                <span class="command">bash ~/Developer/toolBox/scripts/&lt;script-name&gt;.sh</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">PowerShell says &ldquo;execution policy&rdquo; won't allow scripts. What do I do?</summary>
+            <div class="faq-answer">
+              <p>Windows restricts script execution by default for security. Run this command in an <strong>Administrator PowerShell</strong> session before running the script:</p>
+              <div class="code-block">
+                <span class="command">Set-ExecutionPolicy Bypass -Scope Process -Force</span>
+              </div>
+              <p>This allows scripts to run in the <strong>current session only</strong>. It resets when you close PowerShell, so your system policy stays unchanged. Then run the script as normal.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">GitHub CLI says &ldquo;not authenticated.&rdquo; How do I fix it?</summary>
+            <div class="faq-answer">
+              <p><a href="tools/reposync.html">Repo Sync</a> requires the GitHub CLI (<code>gh</code>) to be authenticated with your GitHub account. Run the following command and follow the prompts to sign in via your browser:</p>
+              <div class="code-block">
+                <span class="command">gh auth login</span>
+              </div>
+              <p>Once authenticated, the script can access your repositories. You only need to do this once per machine. If <code>gh</code> is not installed, run <a href="tools/packagemanagersetup.html">Package Manager Setup</a> first &mdash; it installs the GitHub CLI automatically.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How do I report a bug or request a feature?</summary>
+            <div class="faq-answer">
+              <p>Open an issue on the <a href="https://github.com/DJCastle/toolBox/issues" target="_blank" rel="noopener noreferrer">GitHub repository</a>. Include a description of the problem, your operating system and version, and any error messages you see (copy and paste them from Terminal or PowerShell).</p>
+              <p>You can also reach us via the <a href="contact.html">contact page</a> or email <a href="mailto:support@codecraftedapps.com">support@codecraftedapps.com</a>.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Still Need Help -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="disclaimer" style="border-color: var(--accent); background: var(--accent-soft);">
+          <div class="disclaimer-icon">&#128161;</div>
+          <div class="disclaimer-content">
+            <h3 style="color: var(--accent);">Still have questions?</h3>
+            <p>Check the <a href="getting-started.html" style="color: var(--accent); font-weight: 600;">Getting Started guide</a> for step-by-step setup instructions, or <a href="https://github.com/DJCastle/toolBox/issues" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">open an issue on GitHub</a> and we'll help you out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">Tool<span>box</span></a>
+          <p class="footer-tagline">Curated macOS and Windows automation tools by CodeCraftedApps. Open source, privacy-first.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <a href="getting-started.html">Getting Started</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-column">
+          <h4>Project</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="https://github.com/DJCastle/toolBox" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://codecraftedapps.com" target="_blank" rel="noopener noreferrer">CodeCraftedApps</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CodeCraftedApps. All rights reserved. Not affiliated with Apple Inc. or Microsoft Corporation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <!-- Nav toggle, scroll reveal, back-to-top -->
+  <script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', function(e) { e.stopPropagation(); nav.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove('open'); });
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', function() { backToTop.classList.toggle('visible', window.scrollY > 300); });
+      backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+  })();
+  </script>
+
+  <!-- Buy Me a Coffee -->
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="codecraftopensource" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting and for your support." data-color="#007AFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+</body>
+</html>
