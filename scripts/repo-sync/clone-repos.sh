@@ -42,6 +42,23 @@
 #   - jq — installed by brew-setup.sh
 #   - Internet connection
 #
+# APPLE SHORTCUT:
+#   To run this from the Shortcuts app:
+#     1. Open Shortcuts > New Shortcut
+#     2. Add a "Run Shell Script" action
+#     3. Paste this launcher script:
+#          #!/bin/bash
+#          REPO="$HOME/Developer/toolBox"
+#          SCRIPT="$REPO/scripts/repo-sync/clone-repos.sh"
+#          if [ ! -f "$SCRIPT" ]; then
+#              mkdir -p "$HOME/Developer"
+#              git clone https://github.com/DJCastle/toolBox.git "$REPO"
+#          fi
+#          osascript -e "tell application \"Terminal\"
+#              activate
+#              do script \"bash '$SCRIPT'\"
+#          end tell"
+#
 
 set -e
 

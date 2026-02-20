@@ -34,6 +34,23 @@
 #   - Internet connection
 #   - Python 3 (included with macOS)
 #
+# APPLE SHORTCUT:
+#   To run this from the Shortcuts app:
+#     1. Open Shortcuts > New Shortcut
+#     2. Add a "Run Shell Script" action
+#     3. Paste this launcher script:
+#          #!/bin/bash
+#          REPO="$HOME/Developer/toolBox"
+#          SCRIPT="$REPO/scripts/non-appstore-download/download-apps.sh"
+#          if [ ! -f "$SCRIPT" ]; then
+#              mkdir -p "$HOME/Developer"
+#              git clone https://github.com/DJCastle/toolBox.git "$REPO"
+#          fi
+#          osascript -e "tell application \"Terminal\"
+#              activate
+#              do script \"bash '$SCRIPT'\"
+#          end tell"
+#
 # NOTE:
 #   For a newer version with --check mode, version tracking, and
 #   Windows support, see scripts/app-downloader/ instead.

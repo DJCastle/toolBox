@@ -35,6 +35,21 @@
 .EXAMPLE
     .\download-apps.ps1              Download all apps
     .\download-apps.ps1 -Check       Report only — no downloads
+
+.NOTES
+    POWER AUTOMATE DESKTOP (PAD) FLOW:
+      To run this from PAD:
+        1. Open Power Automate Desktop > New Flow
+        2. Add a "Run PowerShell script" action
+        3. Paste this launcher script:
+
+             $ScriptDir = Join-Path $env:USERPROFILE "Developer\toolBox"
+             $Script = Join-Path $ScriptDir "scripts\app-downloader\download-apps.ps1"
+             if (-not (Test-Path $Script)) {
+                 New-Item -ItemType Directory -Force -Path (Join-Path $env:USERPROFILE "Developer") | Out-Null
+                 git clone https://github.com/DJCastle/toolBox.git $ScriptDir 2>$null
+             }
+             Start-Process powershell -ArgumentList "-NoExit", "-ExecutionPolicy", "Bypass", "-File", "`"$Script`""
 #>
 
 param(
